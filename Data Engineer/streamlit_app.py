@@ -17,7 +17,7 @@ from saved_analyses import load_supplied_analysis
 ROOT = Path(__file__).resolve().parent
 ET = ZoneInfo("America/New_York")
 st.set_page_config(page_title="Disclosure research · Argus", layout="wide")
-st.html(f"<style>{(ROOT / 'ui.css').read_text()}</style>")
+st.html(f"<style>{(ROOT / 'ui.css').read_text(encoding='utf-8')}</style>")
 
 
 def html(value: str) -> None:

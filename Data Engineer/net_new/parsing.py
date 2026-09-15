@@ -23,7 +23,7 @@ class Chunk:
 
 
 def parse(dataset: Dataset, document: Document, chunk_size: int = 1600) -> list[Chunk]:
-    raw = local_file(dataset.root, document.path).read_text(errors="replace")
+    raw = local_file(dataset.root, document.path).read_text(encoding="utf-8", errors="replace")
     soup = BeautifulSoup(raw, "html.parser")
     for node in soup.find_all(["script", "style", "ix:hidden", "noscript"]):
         node.decompose()

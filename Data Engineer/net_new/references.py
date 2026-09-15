@@ -69,7 +69,9 @@ def normalized_source(dataset: Dataset, document_id: str) -> str:
 
 def load_references(path: Path, dataset: Dataset | None = None) -> list[ReferenceCase]:
     cases = [
-        ReferenceCase.model_validate_json(line) for line in path.read_text().splitlines() if line
+        ReferenceCase.model_validate_json(line)
+        for line in path.read_text(encoding="utf-8").splitlines()
+        if line
     ]
     if len({c.case_id for c in cases}) != len(cases):
         raise ValueError("Duplicate reference case IDs")
@@ -137,4 +139,6 @@ def align_cases(cases: list[ReferenceCase], records: list[dict]) -> list[dict]:
 
 def write_jsonl(path: Path, rows: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text("".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows))
+    path.write_text(
+        "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows), encoding="utf-8"
+    )

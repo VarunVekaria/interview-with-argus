@@ -35,7 +35,7 @@ def discover_analyses(dataset: Dataset, ticker: str, runs_root: Path) -> list[Sa
     analyses = []
     for path in dict.fromkeys(paths):
         try:
-            metadata = json.loads((path / "run.json").read_text())
+            metadata = json.loads((path / "run.json").read_text(encoding="utf-8"))
             if metadata["dataset_fingerprint"] != dataset.fingerprint:
                 continue
             records = {
@@ -70,7 +70,7 @@ def load_supplied_analysis(dataset: Dataset, ticker: str) -> SavedAnalysis | Non
     if not dataset.manifest.default_run:
         return None
     path = local_file(dataset.root, dataset.manifest.default_run)
-    metadata = json.loads((path / "run.json").read_text())
+    metadata = json.loads((path / "run.json").read_text(encoding="utf-8"))
     if metadata["dataset_fingerprint"] != dataset.fingerprint:
         raise ValueError("Supplied outputs do not match the dataset")
     expected = {filing.filing_id for filing in dataset.replay_filings(ticker)}

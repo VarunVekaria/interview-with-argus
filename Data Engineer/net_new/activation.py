@@ -13,7 +13,7 @@ def activate(dataset: Dataset, output: Path) -> None:
         relative = output.relative_to(dataset.root.resolve()).as_posix()
     except ValueError as exc:
         raise ValueError("The active run must be inside the dataset directory") from exc
-    metadata = json.loads((output / "run.json").read_text())
+    metadata = json.loads((output / "run.json").read_text(encoding="utf-8"))
     if metadata.get("dataset_fingerprint") != dataset.fingerprint:
         raise ValueError("Run does not match this dataset")
     if (
@@ -30,8 +30,8 @@ def activate(dataset: Dataset, output: Path) -> None:
             raise ValueError("Run contains failed or mismatched records")
         InvestorPrediction.model_validate(record["prediction"])
     path = dataset.root / "manifest.json"
-    manifest = json.loads(path.read_text())
+    manifest = json.loads(path.read_text(encoding="utf-8"))
     manifest["default_run"] = relative
     temporary = path.with_suffix(".json.tmp")
-    temporary.write_text(json.dumps(manifest, indent=2) + "\n")
+    temporary.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     temporary.replace(path)

@@ -1,0 +1,6 @@
+# references/*.json(l) are hashed byte-for-byte against frozen commitments in
+# split.json (see references/README.md). On Windows, core.autocrlf=true rewrites
+# checked-out LF line endings to CRLF, which silently changes those hashes without
+# changing the content. Force LF for these files regardless of local autocrlf.
+references/*.jsonl text eol=lf
+references/*.json text eol=lf
