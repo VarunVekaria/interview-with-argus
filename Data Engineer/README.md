@@ -121,6 +121,7 @@ not earn credit by themselves. Report approximate time spent for context, not as
 a score to maximize or minimize.
 
 AI assistance is welcome; briefly describe how you used it in `FINDINGS.md`.
+Write `FINDINGS.md` in your own words, with your evidence and reasoning.
 In the follow-up walkthrough, we will use your code, evidence, and results to
 discuss your decisions and their limits.
 Prioritize a defensible, working core.
@@ -145,44 +146,32 @@ supporting results instead. Keep credentials out of either submission.
 
 ## Getting the materials
 
-Your hiring email includes the deadline, the starting Git commit, private download
-links for the four files below, and a separate `.env` with your personal inference
-access. **These archives and real datasets are not in Git.** Cloning the repository
-alone does not provide the data or saved baseline.
+The code and instructions are in this repository. Your hiring email states your
+submission deadline and includes two attachments:
 
-| File | Contents |
-| --- | --- |
-| `candidate-data.zip` | Development and holdout company filings and exhibits, historical prices, source provenance, and the saved development model run. Holdout answers are not included. |
-| `candidate-code.zip` | A frozen copy of the app, pipeline, tests, instructions, and development examples, as a backup if GitHub is a blocker. |
-| `release.json` | Release metadata, including the reference version and baseline run identifier. |
-| `SHA256SUMS` | Checksums for verifying the downloaded files. |
+- **`candidate-data.zip`:** development and holdout company filings and exhibits,
+  historical prices, source provenance, and the saved development model run.
+  Holdout answers are not included.
+- **`.env`:** your personal, funded inference access. The email states when that
+  access expires. Keep this file private and out of Git.
 
-Download all four into one folder. You do not need a Google account. Links last up to
-12 hours after preparation; the email states the exact expiry. If materials are
-missing, a link expires, or inference access fails, reply for help or fresh links.
-Once downloaded, the files remain usable throughout the assignment. Download-link
-expiry is separate from your submission deadline and inference access period.
-
-From the download folder, verify the files before extracting them:
-
-```sh
-# macOS
-shasum -a 256 -c SHA256SUMS
-# Linux alternative
-sha256sum -c SHA256SUMS
-```
+The data ZIP is the only archive you need. The data and saved baseline are not in
+Git, so cloning the repository alone is not sufficient. The attached data does
+not expire. If an attachment is missing or access is not working, reply to your
+invitation for help.
 
 ## Setup
 
-Fork this repository and clone your fork. Create your working branch from the
-commit specified in the invitation. Extract `candidate-data.zip` inside
+Fork this repository, clone your fork, and create a working branch. If your
+invitation specifies a starting commit, use that commit. Extract
+`candidate-data.zip` inside
 `Data Engineer/`, then place your supplied `.env` in that directory. You should
 have `Data Engineer/data/pilot/manifest.json` and
 `Data Engineer/data/holdout/manifest.json`. Run the commands below from
 `Data Engineer/`.
 
-If GitHub is a blocker, unzip both archives into the same working directory,
-place `.env` beside its README, and use the email-ZIP submission fallback.
+If GitHub is a blocker, reply to your invitation so we can provide the code
+another way. You can use the email-ZIP submission fallback described above.
 
 ```sh
 uv sync --frozen
