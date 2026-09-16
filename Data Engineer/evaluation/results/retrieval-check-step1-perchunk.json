@@ -1,0 +1,219 @@
+{
+  "method": "per-current-chunk queries, unchanged retrieve()/tokens() scoring",
+  "history_chunks_limit": 12,
+  "total_citations": 21,
+  "ground_truth_located": 21,
+  "retrieved": 7,
+  "rows": [
+    {
+      "case_id": "AMD:0000002488-24-000115",
+      "finding_id": "AMD:0000002488-24-000115:f01",
+      "quote": "Rule 405 of the Securities Act of 1933 (\u00a7230.405 of this chapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (\u00a7240.12b-2 of this chapter). Emerging growth company \u2610 If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. \u2610 Item 5.02 Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers; Compensatory Arrangements of Certain Officers. Executive Incentive Plan (EIP) Bonuses for Fiscal 2023 On February 13, 2024, the Compensation and Leadership Resources Committee (the \u201cCLRC\u201d) of the Board of Directors of Advanced Micro Devices, Inc. (the \u201cCompany\u201d) approved the following annual cash performance bonuses under the EIP to the following covered executive officers: Covered Executive Officer Fiscal 2023 Annual Cash Performance Bonuses Jean Hu, Executive Vice President, Chief Financial Officer and Treasurer $ 507,968 Darren Grasby, Executive Vice President, Strategic Partnerships (1) $ 499,403 Mark Papermaster, Executive Vice President and Chief Technology Officer, Technology and Engineering $ 587,672 Victor Peng, President, AMD $ 682,819 ________________ (1) Mr. Grasby\u2019s Fiscal 2023 Annual Cash Performance Bonus of \u00a3391,781 was converted from British pounds to U.S. dollars using an exchange rate of 1.2747 U.S. dollars per 1.00 British pound, which was the exchange rate reported by Bloomberg Financial as of 12/30/23. On February 14, 2024,",
+      "ground_truth_chunk_ids": [
+        "AMD:0001628280-24-005593:amd-20240213.htm:b8f51c019bd2"
+      ],
+      "ground_truth_located": true,
+      "retrieved": true
+    },
+    {
+      "case_id": "CRWD:0001104659-24-081571",
+      "finding_id": "CRWD:0001104659-24-081571:f01",
+      "quote": "defects, errors, or vulnerabilities, our brand and reputation would be harmed, which would adversely affect our business and results of operations. Real or perceived defects, errors or vulnerabilities in our Falcon platform and cloud modules, the failure of our platform to detect or prevent incidents, including advanced and newly developed attacks, misconfiguration of our solutions, or the failure of customers to take action on attacks identified by our platform could harm our reputation and adversely affect our business, financial position and results of operations. Because our cloud native security platform is complex, it may contain defects or errors that are not detected until after deployment. We cannot assure you that our products will detect all cyberattacks, especially in light of the rapidly changing security threat landscape that our solution seeks to address. Due to a variety of both internal and external factors, including, without limitation, defects or misconfigurations of our or third-party solutions, our solutions could be or become vulnerable to security incidents (both from intentional attacks and accidental causes) that cause them to fail to secure endpoints and detect and block attacks. In addition, because the techniques used by computer hackers to access or sabotage networks and endpoints change frequently and generally are not recognized until launched against a target, there is a risk that an advanced attack could emerge that our cloud native security platform is unable to detect or prevent until after some of our customers are affected.",
+      "ground_truth_chunk_ids": [
+        "CRWD:0001535527-24-000007:crwd-20240131.htm:f31116d59360"
+      ],
+      "ground_truth_located": true,
+      "retrieved": false
+    },
+    {
+      "case_id": "AMD:0000002488-24-000121",
+      "finding_id": "AMD:0000002488-24-000121:f01",
+      "quote": "AMD\u2019s outlook statements are based on current expectations. The following statements are forward-looking and actual results could differ materially depending on market conditions and the factors set forth under \u201cCautionary Statement\u201d below. For the second quarter of 2024, AMD expects revenue to be approximately $5.7 billion, plus or minus $300 million. At the mid-point of the revenue range, this represents year-over-year growth of approximately 6% and sequential growth of approximately 4%. Non-GAAP gross margin is expected to be approximately 53%.",
+      "ground_truth_chunk_ids": [
+        "AMD:0000002488-24-000054:q12024991.htm:0b8e070223e6"
+      ],
+      "ground_truth_located": true,
+      "retrieved": false
+    },
+    {
+      "case_id": "AMD:0000002488-24-000121",
+      "finding_id": "AMD:0000002488-24-000121:f02",
+      "quote": "Q1 2023 Y/Y Q4 2023 Q/Q Revenue ($M) $5,473 $5,353 Up 2% $6,168 Down 11% Gross profit ($M) $2,560 $2,359 Up 9% $2,911 Down 12% Gross margin 47% 44% Up 3 ppts 47% Flat Operating expenses ($M) $2,537 $2,514 Flat $2,575 Flat Operating income (loss) ($M) $36 $(145) Up 125% $342 Down 89% Operating margin 1% (3)% Up 4 ppts 6% Down 5 ppts Net income (loss) ($M) $123 $(139) Up 188% $667 Down 82% Diluted earnings (loss) per share $0.07 $(0.09) Up 178% $0.41 Down 83% Non-GAAP(*) Quarterly Financial Results Q1 2024 Q1 2023 Y/Y Q4 2023 Q/Q Revenue ($M) $5,473 $5,353 Up 2% $6,168 Down 11% Gross profit ($M) $2,861 $2,675 Up 7% $3,133 Down 9% Gross margin 52% 50% Up 2 ppts 51% Up 1 ppt Operating expenses ($M) $1,741 $1,587 Up 10% $1,727 Flat Operating income ($M) $1,133 $1,098 Up 3% $1,412 Down 20% Operating margin 21% 21% Flat 23% Down 2 ppts Net income ($M) $1,013 $970 Up 4% $1,249 Down 19% Diluted earnings per share $0.62 $0.60 Up 3% $0.77 Down 19% Segment Summary \u2022 Record Data Center segment revenue of $2.3 billion was up 80% year-over-year driven by growth in both AMD Instinct\u2122 GPUs and 4 th Gen AMD EPYC\u2122 CPUs. Revenue increased 2% sequentially driven by the first full quarter of AMD Instinct GPU sales, partially offset by a seasonal decline in server CPU sales. \u2022 Client segment revenue was $1.4 billion, up 85% year-over-year driven primarily by AMD Ryzen\u2122 8000 Series processor sales. Revenue decreased 6% sequentially. \u2022 Gaming segment revenue was $922 million, down 48% year-over-year and 33% sequentially due to a decrease in semi-custom revenue and lower AMD Radeon\u2122 GPU sales. \u2022",
+      "ground_truth_chunk_ids": [
+        "AMD:0000002488-24-000054:q12024991.htm:96033fb2c3d7"
+      ],
+      "ground_truth_located": true,
+      "retrieved": false
+    },
+    {
+      "case_id": "AMD:0000002488-24-000121",
+      "finding_id": "AMD:0000002488-24-000121:f02",
+      "quote": "Q1 2023 Y/Y Q4 2023 Q/Q Revenue ($M) $5,473 $5,353 Up 2% $6,168 Down 11% Gross profit ($M) $2,560 $2,359 Up 9% $2,911 Down 12% Gross margin 47% 44% Up 3 ppts 47% Flat Operating expenses ($M) $2,537 $2,514 Flat $2,575 Flat Operating income (loss) ($M) $36 $(145) Up 125% $342 Down 89% Operating margin 1% (3)% Up 4 ppts 6% Down 5 ppts Net income (loss) ($M) $123 $(139) Up 188% $667 Down 82% Diluted earnings (loss) per share $0.07 $(0.09) Up 178% $0.41 Down 83% Non-GAAP(*) Quarterly Financial Results Q1 2024 Q1 2023 Y/Y Q4 2023 Q/Q Revenue ($M) $5,473 $5,353 Up 2% $6,168 Down 11% Gross profit ($M) $2,861 $2,675 Up 7% $3,133 Down 9% Gross margin 52% 50% Up 2 ppts 51% Up 1 ppt Operating expenses ($M) $1,741 $1,587 Up 10% $1,727 Flat Operating income ($M) $1,133 $1,098 Up 3% $1,412 Down 20% Operating margin 21% 21% Flat 23% Down 2 ppts Net income ($M) $1,013 $970 Up 4% $1,249 Down 19% Diluted earnings per share $0.62 $0.60 Up 3% $0.77 Down 19% Segment Summary \u2022 Record Data Center segment revenue of $2.3 billion was up 80% year-over-year driven by growth in both AMD Instinct\u2122 GPUs and 4 th Gen AMD EPYC\u2122 CPUs. Revenue increased 2% sequentially driven by the first full quarter of AMD Instinct GPU sales, partially offset by a seasonal decline in server CPU sales. \u2022 Client segment revenue was $1.4 billion, up 85% year-over-year driven primarily by AMD Ryzen\u2122 8000 Series processor sales. Revenue decreased 6% sequentially. \u2022 Gaming segment revenue was $922 million, down 48% year-over-year and 33% sequentially due to a decrease in semi-custom revenue and lower AMD Radeon\u2122 GPU sales. \u2022",
+      "ground_truth_chunk_ids": [
+        "AMD:0000002488-24-000054:q12024991.htm:96033fb2c3d7"
+      ],
+      "ground_truth_located": true,
+      "retrieved": false
+    },
+    {
+      "case_id": "AMD:0000002488-24-000121",
+      "finding_id": "AMD:0000002488-24-000121:f03",
+      "quote": "AMD\u2019s outlook statements are based on current expectations. The following statements are forward-looking and actual results could differ materially depending on market conditions and the factors set forth under \u201cCautionary Statement\u201d below. For the second quarter of 2024, AMD expects revenue to be approximately $5.7 billion, plus or minus $300 million. At the mid-point of the revenue range, this represents year-over-year growth of approximately 6% and sequential growth of approximately 4%. Non-GAAP gross margin is expected to be approximately 53%.",
+      "ground_truth_chunk_ids": [
+        "AMD:0000002488-24-000054:q12024991.htm:0b8e070223e6"
+      ],
+      "ground_truth_located": true,
+      "retrieved": false
+    },
+    {
+      "case_id": "AMD:0001193125-24-202457",
+      "finding_id": "AMD:0001193125-24-202457:f01",
+      "quote": "Q2 2024 Q2 2023 Y/Y Q1 2024 Q/Q Revenue ($M) $5,835 $5,359 Up 9% $5,473 Up 7% Gross profit ($M) $2,864 $2,443 Up 17% $2,560 Up 12% Gross margin 49% 46% Up 3 ppts 47% Up 2 ppts Operating expenses ($M) $2,605 $2,471 Up 5% $2,537 Up 3% Operating income (loss) ($M) $269 $(20) Up 1,445% $36 Up 647% Operating margin 5% 0% Up 5 ppts 1% Up 4 ppts Net income ($M) $265 $27 Up 881% $123 Up 115% Diluted earnings per share $0.16 $0.02 Up 700% $0.07 Up 129% Non-GAAP(*) Quarterly Financial Results Q2 2024 Q2 2023 Y/Y Q1 2024 Q/Q Revenue ($M) $5,835 $5,359 Up 9% $5,473 Up 7% Gross profit ($M) $3,101 $2,665 Up 16% $2,861 Up 8% Gross margin 53% 50% Up 3 ppts 52% Up 1 ppt Operating expenses ($M) $1,847 $1,605 Up 15% $1,741 Up 6% Operating income ($M) $1,264 $1,068 Up 18% $1,133 Up 12% Operating margin 22% 20% Up 2 ppts 21% Up 1 ppt Net income ($M) $1,126 $948 Up 19% $1,013 Up 11% Diluted earnings per share $0.69 $0.58 Up 19% $0.62 Up 11% Segment Summary \u2022 Record Data Center segment revenue of $2.8 billion was up 115% year-over-year primarily driven by the steep ramp of AMD Instinct\u2122 GPU shipments, and strong growth in 4 th Gen AMD EPYC\u2122 CPU sales. Revenue increased 21% sequentially primarily driven by the strong ramp of AMD Instinct GPU shipments. \u2022 Client segment revenue was $1.5 billion, up 49% year-over-year and 9% sequentially primarily driven by sales of AMD Ryzen\u2122 processors. \u2022 Gaming segment revenue was $648 million, down 59% year-over-year and 30% sequentially primarily due to a decrease in semi-custom revenue. \u2022 Embedded segment revenue was $861 million, down 41% year-over-year as",
+      "ground_truth_chunk_ids": [
+        "AMD:0000002488-24-000121:q22024991.htm:6f03133df133"
+      ],
+      "ground_truth_located": true,
+      "retrieved": false
+    },
+    {
+      "case_id": "CRWD:0001535527-24-000017",
+      "finding_id": "CRWD:0001535527-24-000017:f01",
+      "quote": "compensation assets. The company has not provided the most directly comparable GAAP measures because certain items are out of the company's control or cannot be reasonably predicted. Accordingly, a reconciliation for non-GAAP income from operations, non-GAAP net income attributable to CrowdStrike, and non-GAAP net income per share attributable to CrowdStrike common stockholders is not available without unreasonable effort. Q2 FY25 Guidance Full Year FY25 Guidance Total revenue $958.3 - $961.2 million $3,976.3 - $4,010.7 million Non-GAAP income from operations $208.3 - $210.5 million $890.1 - $916.5 million Non-GAAP net income attributable to CrowdStrike $245.7 - $247.8 million $985.6 - $1,012.0 million Non-GAAP net income per share attributable to CrowdStrike common stockholders, diluted $0.98 - $0.99 $3.93 - $4.03 Weighted average shares used in computing Non-GAAP net income per share attributable to common stockholders, diluted 250 million 251 million These statements are forward-looking and actual results may differ materially as a result of many factors. Refer to the Forward-Looking Statements safe harbor below for information on the factors that could cause the company's actual results to differ materially from these forward-looking statements. Conference Call Information CrowdStrike will host a conference call for analysts and investors to discuss its earnings results for the first quarter of fiscal 2025 and outlook for its fiscal second quarter and fiscal year 2025 today at 2:00 p.m. Pacific time (5:00 p.m. Eastern time). A recorded webcast of the event will also be",
+      "ground_truth_chunk_ids": [
+        "CRWD:0001535527-24-000011:crwd-20240604xex991.htm:7a5e7e634113"
+      ],
+      "ground_truth_located": true,
+      "retrieved": true
+    },
+    {
+      "case_id": "CRWD:0001535527-24-000017",
+      "finding_id": "CRWD:0001535527-24-000017:f02",
+      "quote": "Indicate by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (\u00a7 230.405 of this chapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (\u00a7 240.12b-2 of this chapter). Emerging growth company \u00a8 If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. \u00a8 Item 8.01 Other Events. On July 19, 2024, CrowdStrike Holdings, Inc. (\u201cwe\u201d or \u201cus\u201d) released a sensor configuration update for our Falcon sensor software that resulted in outages for a number of our customers utilizing certain Windows systems (the \u201cevent\u201d). The event was not caused by a cyberattack. We urgently mobilized teams to support the security and stability of our customers. Certain Windows systems that were online when the update was released at 4:09 UTC on July 19 were affected. We identified and isolated the issue and the update was reverted at 5:27 UTC. We continue to work with impacted customers to fully restore their systems. As part of that effort, we have provided remediation information through our customer support portal and published event-related updates accessible through our blog at www.crowdstrike.com/blog. This is an evolving situation. We continue to evaluate the impact of the event on our business and operations. Forward-Looking Statements This Form 8-K contains forward-looking statements that involve risks and uncertainties, including",
+      "ground_truth_chunk_ids": [
+        "CRWD:0001104659-24-081571:tm2419936d1_8k.htm:bf23759cf5d7"
+      ],
+      "ground_truth_located": true,
+      "retrieved": false
+    },
+    {
+      "case_id": "CRWD:0001535527-24-000017",
+      "finding_id": "CRWD:0001535527-24-000017:f03",
+      "quote": "compensation assets. The company has not provided the most directly comparable GAAP measures because certain items are out of the company's control or cannot be reasonably predicted. Accordingly, a reconciliation for non-GAAP income from operations, non-GAAP net income attributable to CrowdStrike, and non-GAAP net income per share attributable to CrowdStrike common stockholders is not available without unreasonable effort. Q2 FY25 Guidance Full Year FY25 Guidance Total revenue $958.3 - $961.2 million $3,976.3 - $4,010.7 million Non-GAAP income from operations $208.3 - $210.5 million $890.1 - $916.5 million Non-GAAP net income attributable to CrowdStrike $245.7 - $247.8 million $985.6 - $1,012.0 million Non-GAAP net income per share attributable to CrowdStrike common stockholders, diluted $0.98 - $0.99 $3.93 - $4.03 Weighted average shares used in computing Non-GAAP net income per share attributable to common stockholders, diluted 250 million 251 million These statements are forward-looking and actual results may differ materially as a result of many factors. Refer to the Forward-Looking Statements safe harbor below for information on the factors that could cause the company's actual results to differ materially from these forward-looking statements. Conference Call Information CrowdStrike will host a conference call for analysts and investors to discuss its earnings results for the first quarter of fiscal 2025 and outlook for its fiscal second quarter and fiscal year 2025 today at 2:00 p.m. Pacific time (5:00 p.m. Eastern time). A recorded webcast of the event will also be",
+      "ground_truth_chunk_ids": [
+        "CRWD:0001535527-24-000011:crwd-20240604xex991.htm:7a5e7e634113"
+      ],
+      "ground_truth_located": true,
+      "retrieved": true
+    },
+    {
+      "case_id": "AMD:0000002488-24-000161",
+      "finding_id": "AMD:0000002488-24-000161:f01",
+      "quote": "AMD embedded solutions to power computing and AI at the edge: \u25e6 Sun Singapore announced that it is using AMD Zynq\u2122 UltraScale+\u2122 MPSoC devices to power its large network of AI-based smart parking services, accelerating video analytics and real-time inferencing. \u25e6 Optiver announced that it is using a broad range of AMD high-performance compute engines , including AMD EPYC CPUs, AMD Solarflare\u2122 ethernet adapters, Virtex\u2122 3 FPGAs and Alveo\u2122 accelerators to power its data center infrastructure, unlocking trading performance and efficiency across more than 100 financial markets. Current Outlook AMD\u2019s outlook statements are based on current expectations. The following statements are forward-looking and actual results could differ materially depending on market conditions and the factors set forth under \u201cCautionary Statement\u201d below. For the third quarter of 2024, AMD expects revenue to be approximately $6.7 billion, plus or minus $300 million. At the mid-point of the revenue range, this represents year-over-year growth of approximately 16% and sequential growth of approximately 15%. Non-GAAP gross margin is expected to be approximately 53.5%. AMD Teleconference AMD will hold a conference call for the financial community at 2:00 p.m. PT (5:00 p.m. ET) today to discuss its second quarter 2024 financial results. AMD will provide a real-time audio broadcast of the teleconference on the Investor Relations page of its website at www.amd.com. 4 RECONCILIATION OF GAAP TO NON-GAAP FINANCIAL MEASURES (in millions, except per share data) (Unaudited) Three Months Ended June 29, 2024 March 30,",
+      "ground_truth_chunk_ids": [
+        "AMD:0000002488-24-000121:q22024991.htm:d2389d595026"
+      ],
+      "ground_truth_located": true,
+      "retrieved": false
+    },
+    {
+      "case_id": "AMD:0000002488-24-000161",
+      "finding_id": "AMD:0000002488-24-000161:f01",
+      "quote": "Q2 2024 Q2 2023 Y/Y Q1 2024 Q/Q Revenue ($M) $5,835 $5,359 Up 9% $5,473 Up 7% Gross profit ($M) $2,864 $2,443 Up 17% $2,560 Up 12% Gross margin 49% 46% Up 3 ppts 47% Up 2 ppts Operating expenses ($M) $2,605 $2,471 Up 5% $2,537 Up 3% Operating income (loss) ($M) $269 $(20) Up 1,445% $36 Up 647% Operating margin 5% 0% Up 5 ppts 1% Up 4 ppts Net income ($M) $265 $27 Up 881% $123 Up 115% Diluted earnings per share $0.16 $0.02 Up 700% $0.07 Up 129% Non-GAAP(*) Quarterly Financial Results Q2 2024 Q2 2023 Y/Y Q1 2024 Q/Q Revenue ($M) $5,835 $5,359 Up 9% $5,473 Up 7% Gross profit ($M) $3,101 $2,665 Up 16% $2,861 Up 8% Gross margin 53% 50% Up 3 ppts 52% Up 1 ppt Operating expenses ($M) $1,847 $1,605 Up 15% $1,741 Up 6% Operating income ($M) $1,264 $1,068 Up 18% $1,133 Up 12% Operating margin 22% 20% Up 2 ppts 21% Up 1 ppt Net income ($M) $1,126 $948 Up 19% $1,013 Up 11% Diluted earnings per share $0.69 $0.58 Up 19% $0.62 Up 11% Segment Summary \u2022 Record Data Center segment revenue of $2.8 billion was up 115% year-over-year primarily driven by the steep ramp of AMD Instinct\u2122 GPU shipments, and strong growth in 4 th Gen AMD EPYC\u2122 CPU sales. Revenue increased 21% sequentially primarily driven by the strong ramp of AMD Instinct GPU shipments. \u2022 Client segment revenue was $1.5 billion, up 49% year-over-year and 9% sequentially primarily driven by sales of AMD Ryzen\u2122 processors. \u2022 Gaming segment revenue was $648 million, down 59% year-over-year and 30% sequentially primarily due to a decrease in semi-custom revenue. \u2022 Embedded segment revenue was $861 million, down 41% year-over-year as",
+      "ground_truth_chunk_ids": [
+        "AMD:0000002488-24-000121:q22024991.htm:6f03133df133"
+      ],
+      "ground_truth_located": true,
+      "retrieved": false
+    },
+    {
+      "case_id": "AMD:0000002488-24-000161",
+      "finding_id": "AMD:0000002488-24-000161:f02",
+      "quote": "AMD embedded solutions to power computing and AI at the edge: \u25e6 Sun Singapore announced that it is using AMD Zynq\u2122 UltraScale+\u2122 MPSoC devices to power its large network of AI-based smart parking services, accelerating video analytics and real-time inferencing. \u25e6 Optiver announced that it is using a broad range of AMD high-performance compute engines , including AMD EPYC CPUs, AMD Solarflare\u2122 ethernet adapters, Virtex\u2122 3 FPGAs and Alveo\u2122 accelerators to power its data center infrastructure, unlocking trading performance and efficiency across more than 100 financial markets. Current Outlook AMD\u2019s outlook statements are based on current expectations. The following statements are forward-looking and actual results could differ materially depending on market conditions and the factors set forth under \u201cCautionary Statement\u201d below. For the third quarter of 2024, AMD expects revenue to be approximately $6.7 billion, plus or minus $300 million. At the mid-point of the revenue range, this represents year-over-year growth of approximately 16% and sequential growth of approximately 15%. Non-GAAP gross margin is expected to be approximately 53.5%. AMD Teleconference AMD will hold a conference call for the financial community at 2:00 p.m. PT (5:00 p.m. ET) today to discuss its second quarter 2024 financial results. AMD will provide a real-time audio broadcast of the teleconference on the Investor Relations page of its website at www.amd.com. 4 RECONCILIATION OF GAAP TO NON-GAAP FINANCIAL MEASURES (in millions, except per share data) (Unaudited) Three Months Ended June 29, 2024 March 30,",
+      "ground_truth_chunk_ids": [
+        "AMD:0000002488-24-000121:q22024991.htm:d2389d595026"
+      ],
+      "ground_truth_located": true,
+      "retrieved": false
+    },
+    {
+      "case_id": "AMD:0000002488-24-000161",
+      "finding_id": "AMD:0000002488-24-000161:f03",
+      "quote": "computing solutions will also help cloud and enterprise customers significantly accelerate the deployment of AMD-powered AI infrastructure at scale. AMD has agreed to acquire ZT Systems in a cash and stock transaction valued at $4.9 billion, inclusive of a contingent payment of up to $400 million based on certain post-closing milestones. AMD expects the transaction to be accretive on a non-GAAP basis by the end of 2025. \u201cOur acquisition of ZT Systems is the next major step in our long-term AI strategy to deliver leadership training and inferencing solutions that can be rapidly deployed at scale across cloud and enterprise customers,\u201d said AMD Chair and CEO Dr. Lisa Su . \u201cZT adds world-class systems design and rack-scale solutions expertise that will significantly strengthen our data center AI systems and customer enablement capabilities. This acquisition also builds on the investments we have made to accelerate our AI hardware and software roadmaps. Combining our high-performance Instinct AI accelerator, EPYC CPU, and networking product portfolios with ZT Systems\u2019 industry-leading data center systems expertise will enable AMD to deliver end-to-end data center AI infrastructure at scale with our ecosystem of OEM and ODM partners.\u201d Headquartered in Secaucus, New Jersey, ZT Systems has more than 15 years of experience designing and deploying data center AI compute and storage infrastructure at scale for the largest global cloud companies. ZT Systems\u2019 design, integration, manufacturing and deployment capabilities have made them one of the leading providers of AI training and",
+      "ground_truth_chunk_ids": [
+        "AMD:0001193125-24-202457:d808469dex991.htm:bc25570e3213"
+      ],
+      "ground_truth_located": true,
+      "retrieved": false
+    },
+    {
+      "case_id": "AMD:0000002488-24-000161",
+      "finding_id": "AMD:0000002488-24-000161:f04",
+      "quote": "Q2 2024 Q2 2023 Y/Y Q1 2024 Q/Q Revenue ($M) $5,835 $5,359 Up 9% $5,473 Up 7% Gross profit ($M) $2,864 $2,443 Up 17% $2,560 Up 12% Gross margin 49% 46% Up 3 ppts 47% Up 2 ppts Operating expenses ($M) $2,605 $2,471 Up 5% $2,537 Up 3% Operating income (loss) ($M) $269 $(20) Up 1,445% $36 Up 647% Operating margin 5% 0% Up 5 ppts 1% Up 4 ppts Net income ($M) $265 $27 Up 881% $123 Up 115% Diluted earnings per share $0.16 $0.02 Up 700% $0.07 Up 129% Non-GAAP(*) Quarterly Financial Results Q2 2024 Q2 2023 Y/Y Q1 2024 Q/Q Revenue ($M) $5,835 $5,359 Up 9% $5,473 Up 7% Gross profit ($M) $3,101 $2,665 Up 16% $2,861 Up 8% Gross margin 53% 50% Up 3 ppts 52% Up 1 ppt Operating expenses ($M) $1,847 $1,605 Up 15% $1,741 Up 6% Operating income ($M) $1,264 $1,068 Up 18% $1,133 Up 12% Operating margin 22% 20% Up 2 ppts 21% Up 1 ppt Net income ($M) $1,126 $948 Up 19% $1,013 Up 11% Diluted earnings per share $0.69 $0.58 Up 19% $0.62 Up 11% Segment Summary \u2022 Record Data Center segment revenue of $2.8 billion was up 115% year-over-year primarily driven by the steep ramp of AMD Instinct\u2122 GPU shipments, and strong growth in 4 th Gen AMD EPYC\u2122 CPU sales. Revenue increased 21% sequentially primarily driven by the strong ramp of AMD Instinct GPU shipments. \u2022 Client segment revenue was $1.5 billion, up 49% year-over-year and 9% sequentially primarily driven by sales of AMD Ryzen\u2122 processors. \u2022 Gaming segment revenue was $648 million, down 59% year-over-year and 30% sequentially primarily due to a decrease in semi-custom revenue. \u2022 Embedded segment revenue was $861 million, down 41% year-over-year as",
+      "ground_truth_chunk_ids": [
+        "AMD:0000002488-24-000121:q22024991.htm:6f03133df133"
+      ],
+      "ground_truth_located": true,
+      "retrieved": false
+    },
+    {
+      "case_id": "AMD:0000002488-24-000172",
+      "finding_id": "AMD:0000002488-24-000172:f01",
+      "quote": "Hu /s/Darla Smith Corporate Vice President, Chief Accounting Officer (Principal Accounting Officer) January 31, 2024 Darla Smith * Lead Independent Director January 31, 2024 Nora M. Denzel * Director January 31, 2024 Mark Durcan * Director January 31, 2024 Mike P. Gregoire * Director January 31, 2024 Joe A. Householder * Director January 31, 2024 John W. Marren * Director January 31, 2024 Jon A. Olson * Director January 31, 2024 Abhi Y. Talwalkar * Director January 31, 2024 Beth W. Vanderslice *By: /s/Jean Hu Jean Hu, Attorney-in-Fact 105",
+      "ground_truth_chunk_ids": [
+        "AMD:0000002488-24-000012:amd-20231230.htm:13f79d956cda"
+      ],
+      "ground_truth_located": true,
+      "retrieved": false
+    },
+    {
+      "case_id": "CRWD:0001535527-24-000024",
+      "finding_id": "CRWD:0001535527-24-000024:f01",
+      "quote": "predicted. Accordingly, a reconciliation for non-GAAP income from operations, non-GAAP net income attributable to CrowdStrike, and non-GAAP net income per share attributable to CrowdStrike common stockholders is not available without unreasonable effort. Q3 FY25 Guidance Full Year FY25 Guidance Total revenue $979.2 - $984.7 million $3,890.0 - $3,902.2 million Non-GAAP income from operations $166.7 - $170.8 million $774.7 - $783.9 million Non-GAAP net income attributable to CrowdStrike $201.2 - $205.2 million $908.8 - $918.0 million Non-GAAP net income per share attributable to CrowdStrike common stockholders, diluted $0.80 - $0.81 $3.61 - $3.65 Weighted average shares used in computing non-GAAP net income per share attributable to common stockholders, diluted 252 million 252 million These statements are forward-looking and actual results may differ materially as a result of many factors. Refer to the Forward-Looking Statements safe harbor below for information on the factors that could cause the company's actual results to differ materially from these forward-looking statements. Conference Call Information CrowdStrike will host a conference call for analysts and investors to discuss its earnings results for the second quarter of fiscal 2025 and outlook for its fiscal third quarter and fiscal year 2025 today at 2:00 p.m. Pacific time (5:00 p.m. Eastern time). A recorded webcast of the event will also be available for one year on the CrowdStrike Investor Relations website ir.crowdstrike.com. Date: August 28, 2024 Time: 2:00 p.m. Pacific time / 5:00 p.m. Eastern time Webcast",
+      "ground_truth_chunk_ids": [
+        "CRWD:0001535527-24-000017:crwd-20240828xex991.htm:22a22b0e6128"
+      ],
+      "ground_truth_located": true,
+      "retrieved": true
+    },
+    {
+      "case_id": "CRWD:0001535527-24-000024",
+      "finding_id": "CRWD:0001535527-24-000024:f01",
+      "quote": "compensation assets. The company has not provided the most directly comparable GAAP measures because certain items are out of the company's control or cannot be reasonably predicted. Accordingly, a reconciliation for non-GAAP income from operations, non-GAAP net income attributable to CrowdStrike, and non-GAAP net income per share attributable to CrowdStrike common stockholders is not available without unreasonable effort. Q2 FY25 Guidance Full Year FY25 Guidance Total revenue $958.3 - $961.2 million $3,976.3 - $4,010.7 million Non-GAAP income from operations $208.3 - $210.5 million $890.1 - $916.5 million Non-GAAP net income attributable to CrowdStrike $245.7 - $247.8 million $985.6 - $1,012.0 million Non-GAAP net income per share attributable to CrowdStrike common stockholders, diluted $0.98 - $0.99 $3.93 - $4.03 Weighted average shares used in computing Non-GAAP net income per share attributable to common stockholders, diluted 250 million 251 million These statements are forward-looking and actual results may differ materially as a result of many factors. Refer to the Forward-Looking Statements safe harbor below for information on the factors that could cause the company's actual results to differ materially from these forward-looking statements. Conference Call Information CrowdStrike will host a conference call for analysts and investors to discuss its earnings results for the first quarter of fiscal 2025 and outlook for its fiscal second quarter and fiscal year 2025 today at 2:00 p.m. Pacific time (5:00 p.m. Eastern time). A recorded webcast of the event will also be",
+      "ground_truth_chunk_ids": [
+        "CRWD:0001535527-24-000011:crwd-20240604xex991.htm:7a5e7e634113"
+      ],
+      "ground_truth_located": true,
+      "retrieved": false
+    },
+    {
+      "case_id": "CRWD:0001535527-24-000024",
+      "finding_id": "CRWD:0001535527-24-000024:f02",
+      "quote": "predicted. Accordingly, a reconciliation for non-GAAP income from operations, non-GAAP net income attributable to CrowdStrike, and non-GAAP net income per share attributable to CrowdStrike common stockholders is not available without unreasonable effort. Q3 FY25 Guidance Full Year FY25 Guidance Total revenue $979.2 - $984.7 million $3,890.0 - $3,902.2 million Non-GAAP income from operations $166.7 - $170.8 million $774.7 - $783.9 million Non-GAAP net income attributable to CrowdStrike $201.2 - $205.2 million $908.8 - $918.0 million Non-GAAP net income per share attributable to CrowdStrike common stockholders, diluted $0.80 - $0.81 $3.61 - $3.65 Weighted average shares used in computing non-GAAP net income per share attributable to common stockholders, diluted 252 million 252 million These statements are forward-looking and actual results may differ materially as a result of many factors. Refer to the Forward-Looking Statements safe harbor below for information on the factors that could cause the company's actual results to differ materially from these forward-looking statements. Conference Call Information CrowdStrike will host a conference call for analysts and investors to discuss its earnings results for the second quarter of fiscal 2025 and outlook for its fiscal third quarter and fiscal year 2025 today at 2:00 p.m. Pacific time (5:00 p.m. Eastern time). A recorded webcast of the event will also be available for one year on the CrowdStrike Investor Relations website ir.crowdstrike.com. Date: August 28, 2024 Time: 2:00 p.m. Pacific time / 5:00 p.m. Eastern time Webcast",
+      "ground_truth_chunk_ids": [
+        "CRWD:0001535527-24-000017:crwd-20240828xex991.htm:22a22b0e6128"
+      ],
+      "ground_truth_located": true,
+      "retrieved": true
+    },
+    {
+      "case_id": "CRWD:0001535527-24-000024",
+      "finding_id": "CRWD:0001535527-24-000024:f03",
+      "quote": "demonstrating our focused execution. Our market opportunity remains unchanged, and we believe our continued commitment to customers and innovation will drive even more Falcon platform adoption, protecting our customers from rapidly evolving cyber threats and enabling us to achieve our long-term targets.\u201d Second Quarter Fiscal 2025 Financial Highlights \u2022 Revenue: Total revenue was $963.9 million, a 32% increase, compared to $731.6 million in the second quarter of fiscal 2024. Subscription revenue was $918.3 million, a 33% increase, compared to $690.0 million in the second quarter of fiscal 2024. \u2022 Annual Recurring Revenue (ARR) grew 32% year-over-year to $3.86 billion as of July 31, 2024, of which $217.6 million was net new ARR added in the quarter. \u2022 Subscription Gross Margin: GAAP subscription gr oss margin was 78% in the second quarter of fiscal 2025 and fiscal 2024. Non-GAAP subscription gross margin was 81%, compared to 80% in the second quarter of fiscal 2024. \u2022 Income/Loss from Operations: GAAP income from operations was $13.7 million, compared to a loss of $15.4 million in the second quarter of fiscal 2024. Non-GAAP income from operations was $226.8 million, compared to $155.7 million in the second quarter of fiscal 2024. \u2022 Net Income Attributable to CrowdStrike: GAAP net income attributable to CrowdStrike was $47.0 million, compared to $8.5 million in the second quarter of fiscal 2024. GAAP net income per share attributable to CrowdStrike, diluted, was $0.19, compared to $0.03 in the second quarter of fiscal 2024. Non-GAAP net income attributable to CrowdStrike was",
+      "ground_truth_chunk_ids": [
+        "CRWD:0001535527-24-000017:crwd-20240828xex991.htm:ccd3af83527c"
+      ],
+      "ground_truth_located": true,
+      "retrieved": true
+    },
+    {
+      "case_id": "CRWD:0001535527-24-000024",
+      "finding_id": "CRWD:0001535527-24-000024:f04",
+      "quote": "demonstrating our focused execution. Our market opportunity remains unchanged, and we believe our continued commitment to customers and innovation will drive even more Falcon platform adoption, protecting our customers from rapidly evolving cyber threats and enabling us to achieve our long-term targets.\u201d Second Quarter Fiscal 2025 Financial Highlights \u2022 Revenue: Total revenue was $963.9 million, a 32% increase, compared to $731.6 million in the second quarter of fiscal 2024. Subscription revenue was $918.3 million, a 33% increase, compared to $690.0 million in the second quarter of fiscal 2024. \u2022 Annual Recurring Revenue (ARR) grew 32% year-over-year to $3.86 billion as of July 31, 2024, of which $217.6 million was net new ARR added in the quarter. \u2022 Subscription Gross Margin: GAAP subscription gr oss margin was 78% in the second quarter of fiscal 2025 and fiscal 2024. Non-GAAP subscription gross margin was 81%, compared to 80% in the second quarter of fiscal 2024. \u2022 Income/Loss from Operations: GAAP income from operations was $13.7 million, compared to a loss of $15.4 million in the second quarter of fiscal 2024. Non-GAAP income from operations was $226.8 million, compared to $155.7 million in the second quarter of fiscal 2024. \u2022 Net Income Attributable to CrowdStrike: GAAP net income attributable to CrowdStrike was $47.0 million, compared to $8.5 million in the second quarter of fiscal 2024. GAAP net income per share attributable to CrowdStrike, diluted, was $0.19, compared to $0.03 in the second quarter of fiscal 2024. Non-GAAP net income attributable to CrowdStrike was",
+      "ground_truth_chunk_ids": [
+        "CRWD:0001535527-24-000017:crwd-20240828xex991.htm:ccd3af83527c"
+      ],
+      "ground_truth_located": true,
+      "retrieved": true
+    }
+  ]
+}
