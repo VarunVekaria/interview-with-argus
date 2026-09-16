@@ -1,9 +1,9 @@
 {
-  "method": "per-current-chunk queries, unchanged retrieve()/tokens() scoring",
-  "history_chunks_limit": 12,
+  "method": "Step 3 (per-chunk queries + recency + RRF merge) with history_chunks=24",
+  "history_chunks_limit": 24,
   "total_citations": 21,
   "ground_truth_located": 21,
-  "retrieved": 9,
+  "retrieved": 12,
   "rows": [
     {
       "case_id": "AMD:0000002488-24-000115",
@@ -93,7 +93,7 @@
         "CRWD:0001104659-24-081571:tm2419936d1_8k.htm:bf23759cf5d7"
       ],
       "ground_truth_located": true,
-      "retrieved": false
+      "retrieved": true
     },
     {
       "case_id": "CRWD:0001535527-24-000017",
@@ -123,7 +123,7 @@
         "AMD:0000002488-24-000121:q22024991.htm:6f03133df133"
       ],
       "ground_truth_located": true,
-      "retrieved": false
+      "retrieved": true
     },
     {
       "case_id": "AMD:0000002488-24-000161",
@@ -153,7 +153,7 @@
         "AMD:0000002488-24-000121:q22024991.htm:6f03133df133"
       ],
       "ground_truth_located": true,
-      "retrieved": false
+      "retrieved": true
     },
     {
       "case_id": "AMD:0000002488-24-000172",

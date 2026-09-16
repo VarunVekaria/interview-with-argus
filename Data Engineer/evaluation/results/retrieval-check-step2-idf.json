@@ -1,9 +1,9 @@
 {
-  "method": "per-current-chunk queries, unchanged retrieve()/tokens() scoring",
+  "method": "IDF-weighted overlap scoring, original single merged-query construction",
   "history_chunks_limit": 12,
   "total_citations": 21,
   "ground_truth_located": 21,
-  "retrieved": 9,
+  "retrieved": 3,
   "rows": [
     {
       "case_id": "AMD:0000002488-24-000115",
@@ -43,7 +43,7 @@
         "AMD:0000002488-24-000054:q12024991.htm:96033fb2c3d7"
       ],
       "ground_truth_located": true,
-      "retrieved": true
+      "retrieved": false
     },
     {
       "case_id": "AMD:0000002488-24-000121",
@@ -53,7 +53,7 @@
         "AMD:0000002488-24-000054:q12024991.htm:96033fb2c3d7"
       ],
       "ground_truth_located": true,
-      "retrieved": true
+      "retrieved": false
     },
     {
       "case_id": "AMD:0000002488-24-000121",
@@ -173,7 +173,7 @@
         "CRWD:0001535527-24-000017:crwd-20240828xex991.htm:22a22b0e6128"
       ],
       "ground_truth_located": true,
-      "retrieved": true
+      "retrieved": false
     },
     {
       "case_id": "CRWD:0001535527-24-000024",
@@ -193,7 +193,7 @@
         "CRWD:0001535527-24-000017:crwd-20240828xex991.htm:22a22b0e6128"
       ],
       "ground_truth_located": true,
-      "retrieved": true
+      "retrieved": false
     },
     {
       "case_id": "CRWD:0001535527-24-000024",
@@ -203,7 +203,7 @@
         "CRWD:0001535527-24-000017:crwd-20240828xex991.htm:ccd3af83527c"
       ],
       "ground_truth_located": true,
-      "retrieved": true
+      "retrieved": false
     },
     {
       "case_id": "CRWD:0001535527-24-000024",
@@ -213,7 +213,7 @@
         "CRWD:0001535527-24-000017:crwd-20240828xex991.htm:ccd3af83527c"
       ],
       "ground_truth_located": true,
-      "retrieved": true
+      "retrieved": false
     }
   ]
 }

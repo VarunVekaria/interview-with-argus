@@ -1,9 +1,9 @@
 {
-  "method": "per-current-chunk queries, unchanged retrieve()/tokens() scoring",
+  "method": "per-current-chunk queries + recency-weighted overlap scoring (half_life_days=180)",
   "history_chunks_limit": 12,
   "total_citations": 21,
   "ground_truth_located": 21,
-  "retrieved": 9,
+  "retrieved": 11,
   "rows": [
     {
       "case_id": "AMD:0000002488-24-000115",
@@ -123,7 +123,7 @@
         "AMD:0000002488-24-000121:q22024991.htm:6f03133df133"
       ],
       "ground_truth_located": true,
-      "retrieved": false
+      "retrieved": true
     },
     {
       "case_id": "AMD:0000002488-24-000161",
@@ -153,7 +153,7 @@
         "AMD:0000002488-24-000121:q22024991.htm:6f03133df133"
       ],
       "ground_truth_located": true,
-      "retrieved": false
+      "retrieved": true
     },
     {
       "case_id": "AMD:0000002488-24-000172",

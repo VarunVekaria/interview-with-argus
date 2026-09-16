@@ -48,25 +48,23 @@ def selected_current_chunks(dataset: Dataset, filing, settings: dict) -> list[Ch
 def perchunk_retrieve(
     current_chunks: list[Chunk], history_chunks: list[Chunk], overall_limit: int
 ) -> list[Chunk]:
-    per_chunk_results = [
-        retrieve(c.text, history_chunks, overall_limit) for c in current_chunks if c.text.strip()
-    ]
-    merged: list[Chunk] = []
-    seen: set[str] = set()
-    rank = 0
-    while len(merged) < overall_limit:
-        added = False
-        for lst in per_chunk_results:
-            if rank < len(lst) and lst[rank].id not in seen:
-                seen.add(lst[rank].id)
-                merged.append(lst[rank])
-                added = True
-                if len(merged) >= overall_limit:
-                    break
-        if not added:
-            break
-        rank += 1
-    return merged
+    """Merge each current-chunk's independent ranking via Reciprocal Rank
+    Fusion (sum of 1/(rank+1) across every list a chunk appears in), not a
+    round-robin-by-iteration-order merge. The round-robin version had a real
+    bug: it filled the budget in current-chunk iteration order, so a chunk
+    ranked #1 for a LATER current chunk could get starved out entirely by
+    weaker matches from earlier chunks, purely because of list order, not
+    strength of match. RRF ranks by actual position across all lists."""
+    rrf_scores: dict[str, float] = {}
+    chunk_by_id: dict[str, Chunk] = {}
+    for current_chunk in current_chunks:
+        if not current_chunk.text.strip():
+            continue
+        for rank, candidate in enumerate(retrieve(current_chunk.text, history_chunks, overall_limit)):
+            rrf_scores[candidate.id] = rrf_scores.get(candidate.id, 0.0) + 1.0 / (rank + 1)
+            chunk_by_id[candidate.id] = candidate
+    ranked_ids = sorted(rrf_scores, key=lambda cid: (-rrf_scores[cid], cid))
+    return [chunk_by_id[cid] for cid in ranked_ids[:overall_limit]]
 
 
 def check_case(case: ReferenceCase, dataset: Dataset, settings: dict) -> list[dict]:
