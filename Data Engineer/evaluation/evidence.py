@@ -16,14 +16,22 @@ source HTML — see notes/case-review.md): the model normalizes typographic
 quotes/apostrophes to ASCII, sometimes emits a stray backslash before an
 apostrophe or percent sign, the HTML parser itself inserts spurious
 whitespace when a tag interrupts a word, a quote spliced with "..." lowercases
-the leading word of the resumed segment, and — seen specifically when quoting
-slide-deck source documents — a standalone " \\ " (backslash with spaces on
-both sides) is the model's own marker for a line break between two bullets
-that are not necessarily adjacent in the flattened source text. All five are
-corrected below; none of them should be treated as evidence of fabrication.
-A quote can still fail after all of this — e.g. a real decoding artifact where
-a literal newline plus the word "def" replaces an apostrophe has been observed
-in the supplied baseline. That should fail, and does.
+the leading word of the resumed segment, and — seen when quoting slide-deck
+source documents — a standalone " \\ " (backslash with spaces on both sides)
+OR a literal embedded newline is the model's own marker for a line break
+between two bullets that are not necessarily adjacent in the flattened source
+text (confirmed by splitting on either and finding both resulting halves
+verify independently against real source text). Both are treated as segment
+boundaries, exactly like "...", not as content to normalize away.
+
+A quote can still fail after all of this: a genuine decoding artifact was
+found in the supplied baseline where a literal newline plus the word "def"
+replaces an apostrophe (e.g. "Mr. Peng<newline>def s service"). Splitting on
+the newline there does NOT rescue it — "def s service" still fails to verify
+against the real source on its own, because "def" has no counterpart there at
+all. That is the actual signature of fabricated/corrupted content: a segment
+that still fails after every legitimate splice point has been split out.
+Merely containing a newline or a backslash is not.
 """
 
 from __future__ import annotations
@@ -51,7 +59,7 @@ def _normalize(text: str) -> str:
     return _WHITESPACE.sub("", text).lower()
 
 
-_SEGMENT_BREAK = re.compile(r"\.\.\.|(?<=\s)\\(?=\s)")
+_SEGMENT_BREAK = re.compile(r"\.\.\.|(?<=\s)\\(?=\s)|\n")
 
 
 def _segments(quote: str) -> list[str]:
