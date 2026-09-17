@@ -197,6 +197,87 @@ claiming the reference is wrong.
 | Findings left with no prior evidence at all         | **64.9% → 33.9%**                    |
 | Net effect of improved retrieval on `recall_strict` | **flat** — the bottleneck moved      |
 
+
+# Monitoring
+
+So other than the evluation layer i also built the monitoring layer which can basically surface the following things:
+
+Idea behind monitoring is that in real world there woudn't be a reference file to check things out of, so monitoring would offer some sort of observability into the AI process. 
+
+Error rate	-- A call crashed or failed outright (any error)
+Evidence validity --	Quotes that don't actually exist in the source document
+Empty output	-- The model returned zero findings for a filing
+Truncation	-- It only got to read a small fraction of the document
+Cost / latency --	A call suddenly costs or takes far more than normal
+
+### Thresholds
+
+Every threshold is anchored to what the baseline actually did, not a round number.
+
+| Check | Fires at | Why that number |
+|---|---|---|
+| Error rate | any failed call | baseline ran 9/9 clean |
+| Evidence validity | < 80% verified quotes | baseline sat at 90% |
+| Empty output | any filing with 0 findings | baseline had none |
+| Truncation | < 20% of document read | worst baseline case was 6.3% |
+| Latency | > 133.5s | 1.5× worst baseline (89s) |
+| Cost | > $0.198 | 1.5× worst baseline ($0.132) |
+
+`prior_evidence_empty` is tracked but never alerts — a genuinely new event legitimately
+has nothing to compare against.
+
+
+
+# Holdout (NVDA)
+
+**Frozen config: the updated retrieval startegy** — standard retrieval, 12 history
+chunks. I picked it because the updated retrieval came out a wash on `recall_strict`,
+so there was no evidence to justify preferring it. Frozen before running, not after.
+
+| | Result |
+|---|---|
+| Filings | 3/3 completed |
+| Evidence verified | **28/28 (100%)** |
+| Monitor alerts | **0 — nothing crossed a threshold** |
+| Cost | $0.0612 |
+
+
+### Exploratory second run (disclosed)
+
+After looking at the frozen result, I also ran the **updated retrieval** on holdout.
+The README requires this be disclosed and called exploratory, so: it is. The frozen
+run above is still the submitted result.
+
+| | Frozen (original retrieval) | Exploratory (updated retrieval) |
+|---|---|---|
+| Filings | 3/3 (1 needed a retry) | 3/3, first attempt |
+| Total findings | 14 | 15 (96.7%) |
+| Evidence verified | 28/28 (100%) | 29/30 (96.7%) |
+| No prior evidence at all | 57.1% | **26.7%** |
+| Cost | $0.0612 | $0.0767 (+25%) |
+| Hallucinations | 0 | 0 |
+| Monitor alerts | 0 | 0 |
+
+### Classification labels on the NVDA runs
+
+| Label | Original retrieval | Updated retrieval |
+|---|---|---|
+| `new` | 8 | 5 |
+| `changed` | 5 | **9** |
+| `repeated` | 1 | 1 |
+| `uncertain` | 0 | 0 |
+| **Total findings** | **14** | **15** |
+
+The useful bit: **the retrieval improvement reproduces on a company it was never
+tuned on.** Findings left with no historical context drop 57.1% → 26.7%, same
+direction and roughly the same size as on the dev set (64.9% → 33.9%).
+
+Caveats: not a clean single-variable test (generation limits changed too, which
+probably explains the reliability difference), and n=3 filings with no labels is
+directional at best.
+
+# Conclusion
+
 The pipeline is honest — it doesn't fabricate, and it says when it lacks context. It
 reliably finds the news. Where it falls down is telling you what *changed*, and I
 traced that to retrieval failing to surface the comparison figures 81% of the time.
