@@ -8,10 +8,24 @@ offline ground-truth proxy check every other script in this investigation
 used. Deliberately still does not modify net_new/ -- this mirrors
 net_new.pipeline.build_input()/run_replay() closely enough to produce a
 run.json + records.jsonl in the exact same shape (so evaluation/grade.py
-works on it unmodified), but swaps only the retrieval step. Generation
-(fresh_prediction, the prompt, the model) is completely unchanged from the
-real pipeline -- isolates retrieval as the one variable, same discipline as
-every other step in this investigation.
+works on it unmodified), but swaps only the retrieval step. The prompt,
+schema, and model are completely unchanged from the real pipeline -- isolates
+retrieval as the one variable, same discipline as every other step in this
+investigation.
+
+One deliberate exception: fresh_prediction_v2() below, not
+net_new.pipeline.fresh_prediction(), does the actual model call. The largest
+filing here (history_chunks=24 means up to double the prior-side content)
+repeatedly failed against fresh_prediction()'s hardcoded timeout=90 and
+max_output_tokens=6000, with no parameter to override either -- confirmed via
+direct reproduction that failures were a mix of APITimeoutError (server-side
+processing taking longer than 90s for the larger input) and ValidationError
+(plausibly the response getting cut off before valid JSON completes: baseline
+responses already used up to 5799 output tokens at the smaller 12-chunk
+budget, so 6000 is a real, binding ceiling once the model has more retrieved
+evidence to discuss, not just a timing issue). fresh_prediction_v2 raises both
+ceilings and adds a small bounded retry for these specific, confirmed-transient
+failure modes -- it does not change the prompt, schema, or model.
 
 Spends real money: one real model call per replay filing, same as the
 original baseline.
@@ -28,9 +42,55 @@ from uuid import uuid4
 
 from net_new.dataset import Dataset, Document
 from net_new.parsing import PARSER_VERSION, Chunk, parse
-from net_new.pipeline import PROMPT, digest, fresh_prediction, inference_connection
+from net_new.pipeline import PROMPT, InvestorPrediction, digest, inference_connection
 
 from evaluation.retrieval_check_step3_recency import perchunk_recency_retrieve
+
+
+def fresh_prediction_v2(
+    context: dict,
+    settings: dict,
+    *,
+    timeout: float = 180,
+    max_output_tokens: int = 8000,
+    max_attempts: int = 3,
+) -> tuple[InvestorPrediction, dict]:
+    """Same call as net_new.pipeline.fresh_prediction, but with a longer
+    timeout (90s -> 180s) and a larger max_output_tokens ceiling (6000 ->
+    8000), plus a small bounded retry -- see the module docstring for why.
+    Prompt, schema, and model are identical to the real pipeline."""
+    from openai import OpenAI
+
+    last_exc: Exception | None = None
+    for attempt in range(1, max_attempts + 1):
+        client = OpenAI(**inference_connection(settings["provider"]), timeout=timeout, max_retries=0)
+        try:
+            raw_response = client.responses.with_raw_response.parse(
+                model=settings["model"],
+                instructions=PROMPT,
+                input=json.dumps({"CURRENT": context["current"], "PRIOR": context["prior"]}),
+                text_format=InvestorPrediction,
+                max_output_tokens=max_output_tokens,
+                store=False,
+            )
+            response = raw_response.parse()
+            if response.output_parsed is None:
+                raise ValueError(f"Model returned no structured prediction (status={response.status})")
+            return response.output_parsed, {
+                "response_id": response.id,
+                "requested_model": settings["model"],
+                "reported_model": response.model,
+                "resolved_model": response.model if response.model != settings["model"] else None,
+                "request_id": raw_response.headers.get("x-request-id"),
+                "catalog_version": raw_response.headers.get("x-catalog-version"),
+                "cost_usd": raw_response.headers.get("x-litellm-response-cost"),
+                "usage": response.usage.model_dump() if response.usage else None,
+                "raw_response": response.model_dump(mode="json", warnings=False),
+                "attempts": attempt,
+            }
+        except Exception as exc:  # noqa: BLE001 - bounded retry, confirmed-transient failure modes only
+            last_exc = exc
+    raise last_exc
 
 RETRIEVAL_METHOD = (
     "per-current-chunk queries + recency-weighted overlap scoring "
@@ -97,7 +157,7 @@ def run_replay_v2(dataset: Dataset, output: Path, model: str | None = None) -> d
         "prompt": PROMPT,
         "expected_filing_ids": [f.filing_id for f in filings],
         "status": "running",
-        "note": "Experimental retrieval (see notes/retrieval-experiment.md); generation unchanged from net_new.pipeline.fresh_prediction.",
+        "note": "Experimental retrieval (see notes/retrieval-experiment.md); prompt/schema/model unchanged from net_new.pipeline, but calls go through fresh_prediction_v2 (timeout=180, max_output_tokens=8000, bounded retry) instead of fresh_prediction (timeout=90, max_output_tokens=6000) -- see module docstring.",
     }
     (output / "run.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     errors = 0
@@ -120,7 +180,7 @@ def run_replay_v2(dataset: Dataset, output: Path, model: str | None = None) -> d
                 }
                 started = time.perf_counter()
                 try:
-                    prediction, model_meta = fresh_prediction(context, settings)
+                    prediction, model_meta = fresh_prediction_v2(context, settings)
                     record["prediction"] = prediction.model_dump()
                     record["model_metadata"] = model_meta
                 except Exception as exc:  # noqa: BLE001 - persist per-call failure and continue replay
