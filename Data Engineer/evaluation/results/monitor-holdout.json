@@ -6,11 +6,6 @@
     "error": 0,
     "warning": 0
   },
-  "classification_mix": {
-    "repeated": 1,
-    "new": 8,
-    "changed": 5
-  },
   "prior_evidence_empty": {
     "findings_total": 14,
     "findings_with_no_prior_evidence": 8,
@@ -18,7 +13,7 @@
   },
   "invisible": [
     "Factual correctness of any specific claim -- these checks never compare against a reference or ground truth, only against the run's own output shape and the real source documents (for quote grounding).",
-    "Whether a 'changed'/'repeated' label is the CORRECT one for a given finding -- only that the aggregate mix hasn't drastically shifted.",
+    "Whether a 'new'/'changed'/'repeated'/'uncertain' label is the CORRECT one for a given finding -- classification correctness needs the reference's acceptable_classifications, so it is graded, never monitored.",
     "Whether a finding captures the prior-period COMPARISON, as opposed to just restating the current fact -- the recall_strict vs recall_lenient gap this whole investigation is about requires a reference and a judge; it is structurally invisible to a label-free monitor.",
     "Whether an unmatched 'extra' finding is a genuinely good one -- evidence validity confirms the quote is real, not that the finding itself is worthwhile."
   ]

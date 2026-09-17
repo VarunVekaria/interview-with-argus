@@ -4,12 +4,19 @@ production-realistic half of the exercise -- once real filings start
 arriving, there is no answer key.
 
 These checks catch OPERATIONAL breakage (errors, emptiness, ungrounded
-evidence, format drift, truncation, cost/latency blowups). They cannot tell
-you whether any specific claim is factually correct, or whether a finding
-correctly captures the prior-period comparison as opposed to just restating
-the current fact -- that distinction (this investigation's recall_strict vs
-recall_lenient gap) needs a reference and a judge, and is structurally
-invisible to a label-free monitor. See check_run()'s "invisible" section.
+evidence, truncation, cost/latency blowups). They cannot tell you whether any
+specific claim is factually correct, or whether a finding correctly captures
+the prior-period comparison as opposed to just restating the current fact --
+that distinction (this investigation's recall_strict vs recall_lenient gap)
+needs a reference and a judge, and is structurally invisible to a label-free
+monitor. See check_run()'s "invisible" section.
+
+A classification-mix drift check was deliberately removed rather than kept as
+a weak signal: its "normal" mix could only be established from a single
+9-filing, 74-finding sample, it required 30+ findings before it would fire at
+all, and it never triggered on any run tested. A threshold that thin is not
+defensible as an alert -- better to ship five checks that are anchored to
+something real than six where one is guesswork.
 
 Every threshold below is anchored to the supplied baseline
 (data/pilot/baseline, 9 filings, 0 errors) rather than invented -- each
@@ -21,7 +28,6 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -31,12 +37,11 @@ from net_new.pipeline import load_records
 from .evidence import evidence_summary, verify_prediction_evidence
 
 # Established from the supplied baseline (data/pilot/baseline): 9 filings, 0 errors,
-# 0 empty outputs, 74 findings (58 new / 9 changed / 6 repeated / 1 uncertain),
-# quotes_verified_rate 90% (evaluation/results/evidence-baseline-smoke.txt), worst
-# single-filing truncation ratio 15/239 (AMD ZT Systems), worst latency 89014ms and
-# worst cost $0.132 (AMD:0000002488-24-000161).
+# 0 empty outputs, quotes_verified_rate 90%
+# (evaluation/results/evidence-baseline-smoke.txt), worst single-filing truncation
+# ratio 15/239 (AMD ZT Systems), worst latency 89014ms and worst cost $0.132
+# (AMD:0000002488-24-000161).
 BASELINE_EVIDENCE_VERIFIED_RATE = 0.90
-BASELINE_REPEATED_UNCERTAIN_SHARE = 7 / 74  # 6 repeated + 1 uncertain, verified via check_classification_mix
 BASELINE_WORST_TRUNCATION_RATIO = 15 / 239
 BASELINE_WORST_LATENCY_MS = 89014
 BASELINE_WORST_COST_USD = 0.132
@@ -47,7 +52,6 @@ EVIDENCE_VERIFIED_RATE_FLOOR = 0.80
 TRUNCATION_RATIO_FLOOR = 0.20
 LATENCY_MS_CEILING = BASELINE_WORST_LATENCY_MS * 1.5
 COST_USD_CEILING = BASELINE_WORST_COST_USD * 1.5
-CLASSIFICATION_MIX_MIN_SAMPLE = 30  # findings needed before judging mix drift meaningful
 
 
 @dataclass
@@ -122,29 +126,6 @@ def check_evidence(dataset: Dataset, records: list[dict]) -> list[Alert]:
                         )
                     )
     return alerts
-
-
-def check_classification_mix(records: list[dict]) -> tuple[list[Alert], dict[str, int]]:
-    counts: Counter[str] = Counter()
-    for r in records:
-        if r["status"] == "completed":
-            for f in r["prediction"]["findings"]:
-                counts[f["classification"]] += 1
-    total = sum(counts.values())
-    alerts = []
-    if total >= CLASSIFICATION_MIX_MIN_SAMPLE:
-        share = (counts.get("repeated", 0) + counts.get("uncertain", 0)) / total
-        if share == 0:
-            alerts.append(
-                Alert(
-                    "classification_drift",
-                    "warning",
-                    None,
-                    f"0 of {total} findings classified repeated/uncertain across this batch "
-                    f"-- baseline's share was {BASELINE_REPEATED_UNCERTAIN_SHARE:.1%}",
-                )
-            )
-    return alerts, dict(counts)
 
 
 def check_truncation(records: list[dict]) -> list[Alert]:
@@ -229,8 +210,9 @@ INVISIBLE = [
     "Factual correctness of any specific claim -- these checks never compare against "
     "a reference or ground truth, only against the run's own output shape and the "
     "real source documents (for quote grounding).",
-    "Whether a 'changed'/'repeated' label is the CORRECT one for a given finding -- "
-    "only that the aggregate mix hasn't drastically shifted.",
+    "Whether a 'new'/'changed'/'repeated'/'uncertain' label is the CORRECT one for a "
+    "given finding -- classification correctness needs the reference's "
+    "acceptable_classifications, so it is graded, never monitored.",
     "Whether a finding captures the prior-period COMPARISON, as opposed to just "
     "restating the current fact -- the recall_strict vs recall_lenient gap this whole "
     "investigation is about requires a reference and a judge; it is structurally "
@@ -246,8 +228,6 @@ def check_run(dataset: Dataset, records: list[dict]) -> dict:
     alerts += check_errors(records)
     alerts += check_empty_output(records)
     alerts += check_evidence(dataset, records)
-    mix_alerts, mix_counts = check_classification_mix(records)
-    alerts += mix_alerts
     alerts += check_truncation(records)
     alerts += check_cost_latency(records)
 
@@ -258,7 +238,6 @@ def check_run(dataset: Dataset, records: list[dict]) -> dict:
         "alerts_by_severity": {
             sev: sum(1 for a in alerts if a.severity == sev) for sev in ("error", "warning")
         },
-        "classification_mix": mix_counts,
         "prior_evidence_empty": prior_evidence_empty_summary(records),
         "invisible": INVISIBLE,
     }
@@ -286,8 +265,7 @@ def main() -> None:
             print("No threshold crossed. Reporting that plainly -- not manufacturing an alert.")
         for a in result["alerts"]:
             print(f"  [{a['severity']}] {a['check']} {a['filing_id'] or ''}: {a['message']}")
-        print(f"\nclassification mix: {result['classification_mix']}")
-        print(f"prior_evidence_empty: {result['prior_evidence_empty']}")
+        print(f"\nprior_evidence_empty: {result['prior_evidence_empty']}")
         print("\nWhat remains invisible to this monitor:")
         for note in result["invisible"]:
             print(f"  - {note}")
