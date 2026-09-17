@@ -1,0 +1,592 @@
+{
+  "dataset": "data\\pilot",
+  "references": "references\\development.jsonl",
+  "run": "runs\\retrieval-v2-replay",
+  "run_id": "06282b35d9d246c89e0f969e4b8f0bdf",
+  "run_config": {
+    "pipeline_version": "net-new-v2-retrieval-experiment",
+    "parser_version": "html-text-v1",
+    "provider": "litellm",
+    "model": "gemini-fast-v1",
+    "history_chunks": 24,
+    "current_char_budget": 24000,
+    "retrieval_method": "per-current-chunk queries + recency-weighted overlap scoring (half_life_days=180) + Reciprocal Rank Fusion merge, history_chunks=24"
+  },
+  "judge_model": "anthropic-strong-v1",
+  "judge_cost_usd": 0.17669,
+  "metrics": {
+    "cases_total": 9,
+    "cases_completed": 8,
+    "cases_incomplete": [
+      "AMD:0000002488-24-000121"
+    ],
+    "reference_findings_total": 20,
+    "coverage_full": 12,
+    "coverage_partial": 8,
+    "coverage_none": 0,
+    "recall_strict": 0.6,
+    "recall_lenient": 1.0,
+    "classification_agreement_rate": 0.9,
+    "missed_finding_ids": [],
+    "ai_findings_total": 47,
+    "extra_findings_total": 19,
+    "extra_findings_evidence_verified": 17,
+    "extra_findings_evidence_unverified": 2,
+    "evidence_quotes_total": 108,
+    "evidence_quotes_verified": 97,
+    "evidence_quotes_verified_rate": 0.8981481481481481,
+    "findings_with_no_evidence_at_all": 0,
+    "per_case": [
+      {
+        "case_id": "AMD:0000002488-24-000109",
+        "reference_findings_total": 2,
+        "output_state": "completed",
+        "coverage_full": 2,
+        "coverage_partial": 0,
+        "coverage_none": 0,
+        "matched_count": 2,
+        "recall_strict": 1.0,
+        "recall_lenient": 1.0,
+        "classification_agreement_matched_count": 2,
+        "classification_agreement_rate": 1.0,
+        "ai_findings_total": 7,
+        "extra_findings_total": 2,
+        "extra_findings_evidence_verified": 2,
+        "extra_findings_evidence_unverified": 0,
+        "evidence": {
+          "findings_total": 7,
+          "findings_with_no_evidence": 0,
+          "findings_fully_verified": 6,
+          "quotes_total": 19,
+          "quotes_verified": 18,
+          "quotes_verified_rate": 0.9473684210526315,
+          "quotes_verified_by_chunk": 0,
+          "quotes_verified_by_document_fallback_only": 18,
+          "quotes_outside_shown_context": 0,
+          "quotes_document_missing": 0
+        },
+        "missed_finding_ids": [],
+        "partial_finding_ids": []
+      },
+      {
+        "case_id": "AMD:0000002488-24-000115",
+        "reference_findings_total": 2,
+        "output_state": "completed",
+        "coverage_full": 1,
+        "coverage_partial": 1,
+        "coverage_none": 0,
+        "matched_count": 2,
+        "recall_strict": 0.5,
+        "recall_lenient": 1.0,
+        "classification_agreement_matched_count": 2,
+        "classification_agreement_rate": 1.0,
+        "ai_findings_total": 4,
+        "extra_findings_total": 0,
+        "extra_findings_evidence_verified": 0,
+        "extra_findings_evidence_unverified": 0,
+        "evidence": {
+          "findings_total": 4,
+          "findings_with_no_evidence": 0,
+          "findings_fully_verified": 4,
+          "quotes_total": 8,
+          "quotes_verified": 8,
+          "quotes_verified_rate": 1.0,
+          "quotes_verified_by_chunk": 0,
+          "quotes_verified_by_document_fallback_only": 8,
+          "quotes_outside_shown_context": 0,
+          "quotes_document_missing": 0
+        },
+        "missed_finding_ids": [],
+        "partial_finding_ids": [
+          "AMD:0000002488-24-000115:f01"
+        ]
+      },
+      {
+        "case_id": "CRWD:0001104659-24-081571",
+        "reference_findings_total": 2,
+        "output_state": "completed",
+        "coverage_full": 2,
+        "coverage_partial": 0,
+        "coverage_none": 0,
+        "matched_count": 2,
+        "recall_strict": 1.0,
+        "recall_lenient": 1.0,
+        "classification_agreement_matched_count": 2,
+        "classification_agreement_rate": 1.0,
+        "ai_findings_total": 5,
+        "extra_findings_total": 2,
+        "extra_findings_evidence_verified": 2,
+        "extra_findings_evidence_unverified": 0,
+        "evidence": {
+          "findings_total": 5,
+          "findings_with_no_evidence": 0,
+          "findings_fully_verified": 5,
+          "quotes_total": 8,
+          "quotes_verified": 8,
+          "quotes_verified_rate": 1.0,
+          "quotes_verified_by_chunk": 0,
+          "quotes_verified_by_document_fallback_only": 8,
+          "quotes_outside_shown_context": 0,
+          "quotes_document_missing": 0
+        },
+        "missed_finding_ids": [],
+        "partial_finding_ids": []
+      },
+      {
+        "case_id": "AMD:0000002488-24-000121",
+        "reference_findings_total": 3,
+        "output_state": "error"
+      },
+      {
+        "case_id": "AMD:0001193125-24-202457",
+        "reference_findings_total": 2,
+        "output_state": "completed",
+        "coverage_full": 0,
+        "coverage_partial": 2,
+        "coverage_none": 0,
+        "matched_count": 2,
+        "recall_strict": 0.0,
+        "recall_lenient": 1.0,
+        "classification_agreement_matched_count": 2,
+        "classification_agreement_rate": 1.0,
+        "ai_findings_total": 4,
+        "extra_findings_total": 1,
+        "extra_findings_evidence_verified": 1,
+        "extra_findings_evidence_unverified": 0,
+        "evidence": {
+          "findings_total": 4,
+          "findings_with_no_evidence": 0,
+          "findings_fully_verified": 4,
+          "quotes_total": 10,
+          "quotes_verified": 10,
+          "quotes_verified_rate": 1.0,
+          "quotes_verified_by_chunk": 0,
+          "quotes_verified_by_document_fallback_only": 10,
+          "quotes_outside_shown_context": 0,
+          "quotes_document_missing": 0
+        },
+        "missed_finding_ids": [],
+        "partial_finding_ids": [
+          "AMD:0001193125-24-202457:f01",
+          "AMD:0001193125-24-202457:f02"
+        ]
+      },
+      {
+        "case_id": "CRWD:0001535527-24-000017",
+        "reference_findings_total": 3,
+        "output_state": "completed",
+        "coverage_full": 2,
+        "coverage_partial": 1,
+        "coverage_none": 0,
+        "matched_count": 3,
+        "recall_strict": 0.6666666666666666,
+        "recall_lenient": 1.0,
+        "classification_agreement_matched_count": 3,
+        "classification_agreement_rate": 1.0,
+        "ai_findings_total": 5,
+        "extra_findings_total": 2,
+        "extra_findings_evidence_verified": 2,
+        "extra_findings_evidence_unverified": 0,
+        "evidence": {
+          "findings_total": 5,
+          "findings_with_no_evidence": 0,
+          "findings_fully_verified": 4,
+          "quotes_total": 11,
+          "quotes_verified": 9,
+          "quotes_verified_rate": 0.8181818181818182,
+          "quotes_verified_by_chunk": 0,
+          "quotes_verified_by_document_fallback_only": 9,
+          "quotes_outside_shown_context": 0,
+          "quotes_document_missing": 0
+        },
+        "missed_finding_ids": [],
+        "partial_finding_ids": [
+          "CRWD:0001535527-24-000017:f03"
+        ]
+      },
+      {
+        "case_id": "AMD:0000002488-24-000161",
+        "reference_findings_total": 4,
+        "output_state": "completed",
+        "coverage_full": 2,
+        "coverage_partial": 2,
+        "coverage_none": 0,
+        "matched_count": 4,
+        "recall_strict": 0.5,
+        "recall_lenient": 1.0,
+        "classification_agreement_matched_count": 2,
+        "classification_agreement_rate": 0.5,
+        "ai_findings_total": 6,
+        "extra_findings_total": 1,
+        "extra_findings_evidence_verified": 1,
+        "extra_findings_evidence_unverified": 0,
+        "evidence": {
+          "findings_total": 6,
+          "findings_with_no_evidence": 0,
+          "findings_fully_verified": 4,
+          "quotes_total": 15,
+          "quotes_verified": 12,
+          "quotes_verified_rate": 0.8,
+          "quotes_verified_by_chunk": 0,
+          "quotes_verified_by_document_fallback_only": 12,
+          "quotes_outside_shown_context": 0,
+          "quotes_document_missing": 0
+        },
+        "missed_finding_ids": [],
+        "partial_finding_ids": [
+          "AMD:0000002488-24-000161:f01",
+          "AMD:0000002488-24-000161:f04"
+        ]
+      },
+      {
+        "case_id": "AMD:0000002488-24-000172",
+        "reference_findings_total": 1,
+        "output_state": "completed",
+        "coverage_full": 1,
+        "coverage_partial": 0,
+        "coverage_none": 0,
+        "matched_count": 1,
+        "recall_strict": 1.0,
+        "recall_lenient": 1.0,
+        "classification_agreement_matched_count": 1,
+        "classification_agreement_rate": 1.0,
+        "ai_findings_total": 3,
+        "extra_findings_total": 2,
+        "extra_findings_evidence_verified": 2,
+        "extra_findings_evidence_unverified": 0,
+        "evidence": {
+          "findings_total": 3,
+          "findings_with_no_evidence": 0,
+          "findings_fully_verified": 2,
+          "quotes_total": 7,
+          "quotes_verified": 6,
+          "quotes_verified_rate": 0.8571428571428571,
+          "quotes_verified_by_chunk": 0,
+          "quotes_verified_by_document_fallback_only": 6,
+          "quotes_outside_shown_context": 0,
+          "quotes_document_missing": 0
+        },
+        "missed_finding_ids": [],
+        "partial_finding_ids": []
+      },
+      {
+        "case_id": "CRWD:0001535527-24-000024",
+        "reference_findings_total": 4,
+        "output_state": "completed",
+        "coverage_full": 2,
+        "coverage_partial": 2,
+        "coverage_none": 0,
+        "matched_count": 4,
+        "recall_strict": 0.5,
+        "recall_lenient": 1.0,
+        "classification_agreement_matched_count": 4,
+        "classification_agreement_rate": 1.0,
+        "ai_findings_total": 13,
+        "extra_findings_total": 9,
+        "extra_findings_evidence_verified": 7,
+        "extra_findings_evidence_unverified": 2,
+        "evidence": {
+          "findings_total": 13,
+          "findings_with_no_evidence": 0,
+          "findings_fully_verified": 11,
+          "quotes_total": 30,
+          "quotes_verified": 26,
+          "quotes_verified_rate": 0.8666666666666667,
+          "quotes_verified_by_chunk": 0,
+          "quotes_verified_by_document_fallback_only": 26,
+          "quotes_outside_shown_context": 0,
+          "quotes_document_missing": 0
+        },
+        "missed_finding_ids": [],
+        "partial_finding_ids": [
+          "CRWD:0001535527-24-000024:f01",
+          "CRWD:0001535527-24-000024:f02"
+        ]
+      }
+    ]
+  },
+  "matcher_results": [
+    {
+      "case_id": "AMD:0000002488-24-000109",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "AMD:0000002488-24-000109:f01",
+          "matched_ai_indices": [
+            0,
+            1,
+            2
+          ],
+          "rationale": "AI findings 0, 1, and 2 collectively state the old and new salaries for all four executives (Su $1.20M\u2192$1.26M, Hu $725K\u2192$760K, Guido $725K\u2192$750K, Norrod $710K\u2192$750K) effective July 1, 2024, exactly matching the expected facts and comparison.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "AMD:0000002488-24-000109:f02",
+          "matched_ai_indices": [
+            3,
+            4
+          ],
+          "rationale": "AI findings 3 and 4 together report the target equity award values ($28.68M for Su, $8M for Hu, $6M for Guido, $7M for Norrod) and Su's 75% PRSUs / 25% stock options allocation, matching the expected facts. The comparison about these being new awards under the existing 2023 Equity Incentive Plan is also captured.",
+          "coverage": "full",
+          "classification_acceptable": true
+        }
+      ],
+      "extra_ai_indices": [
+        5,
+        6
+      ],
+      "ai_findings_total": 7
+    },
+    {
+      "case_id": "AMD:0000002488-24-000115",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "AMD:0000002488-24-000115:f01",
+          "matched_ai_indices": [
+            0,
+            3
+          ],
+          "rationale": "AI finding 0 explicitly states Victor Peng will retire effective August 30, 2024, and mentions the retirement transition agreement being prepared (advisory role context). AI finding 3 provides the comparison to prior status as active president. Together they capture the expected facts and the comparison to his earlier role as AMD president. Classification 'new' (index 0) is acceptable.",
+          "coverage": "partial",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "AMD:0000002488-24-000115:f02",
+          "matched_ai_indices": [
+            1,
+            2
+          ],
+          "rationale": "AI finding 1 states Boppana's responsibilities expand to include the Instinct data center AI accelerator business and that he will report directly to Lisa Su. AI finding 2 states Salil Raje will continue leading the embedded business and now report to Lisa Su. Together these cover both expected facts. The comparison about changed reporting lines and AI responsibilities is captured. Both classified 'new', which is acceptable.",
+          "coverage": "full",
+          "classification_acceptable": true
+        }
+      ],
+      "extra_ai_indices": [],
+      "ai_findings_total": 4
+    },
+    {
+      "case_id": "CRWD:0001104659-24-081571",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "CRWD:0001104659-24-081571:f01",
+          "matched_ai_indices": [
+            0,
+            1
+          ],
+          "rationale": "AI finding 0 captures the 04:09 UTC release time and the Windows system outages, while AI finding 1 captures the 05:27 UTC reversion. Together they state the specific expected facts about the update timing, reversion, and ongoing remediation. The comparison to earlier generic risk disclosures is also addressed in the change descriptions. Classification 'new' is acceptable.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "CRWD:0001104659-24-081571:f02",
+          "matched_ai_indices": [
+            3
+          ],
+          "rationale": "AI finding 3 states that CrowdStrike is evaluating the extent of the impact and that the ultimate effect is unknown, which captures the key expected fact that the financial consequences remain unquantified. The classification 'uncertain' matches the acceptable classification.",
+          "coverage": "full",
+          "classification_acceptable": true
+        }
+      ],
+      "extra_ai_indices": [
+        2,
+        4
+      ],
+      "ai_findings_total": 5
+    },
+    {
+      "case_id": "AMD:0000002488-24-000121",
+      "output_state": "error"
+    },
+    {
+      "case_id": "AMD:0001193125-24-202457",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "AMD:0001193125-24-202457:f01",
+          "matched_ai_indices": [
+            0,
+            1
+          ],
+          "rationale": "AI finding 0 identifies the new acquisition agreement for ZT Systems, and AI finding 1 states the transaction is valued at up to $4.9 billion with cash and stock components plus contingent consideration. Together they capture the key expected facts about the deal value (up to $4.9B including contingent consideration). AI finding 1 does not explicitly state 'up to $400 million of contingent consideration' but mentions potential contingent consideration. The closing timeline ('first half of 2025') is not explicitly stated in the AI findings, though finding 3 references an outside date of August 2025. The comparison to earlier AI-chip business growth is partially addressed by finding 0's note about a new acquisition agreement. Coverage is partial because the $400M contingent consideration detail and the expected first-half-2025 closing timeline are not specifically stated.",
+          "coverage": "partial",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "AMD:0001193125-24-202457:f02",
+          "matched_ai_indices": [
+            2
+          ],
+          "rationale": "AI finding 2 states that AMD intends to sell the manufacturing business component of ZT Systems following the acquisition closing. This captures the core expected fact about separating manufacturing from the acquired expertise. However, it does not mention the plan to seek a 'strategic partner' specifically, nor does it reference AMD retaining systems-design and customer-enablement capabilities, or the projected non-GAAP accretion by end of 2025. The comparison noting that this is broader than simply buying a server manufacturer is partially reflected. Coverage is partial because while the manufacturing divestiture intent is stated, the fuller picture (strategic partner, retaining design/enablement capabilities) is missing.",
+          "coverage": "partial",
+          "classification_acceptable": true
+        }
+      ],
+      "extra_ai_indices": [
+        3
+      ],
+      "ai_findings_total": 4
+    },
+    {
+      "case_id": "CRWD:0001535527-24-000017",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "CRWD:0001535527-24-000017:f01",
+          "matched_ai_indices": [
+            1
+          ],
+          "rationale": "AI finding 1 states the revised FY2025 revenue guidance range of $3,890.0\u2013$3,902.2 million and explicitly provides the prior guidance of $3,976.3\u2013$4,010.7 million, fully capturing the expected facts and the comparison.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "CRWD:0001535527-24-000017:f02",
+          "matched_ai_indices": [
+            2
+          ],
+          "rationale": "AI finding 2 states the $30 million subscription-revenue impact per remaining quarter and the high-single-digit million professional-services impact from the customer commitment package. It also notes that prior disclosures had not quantified these impacts, matching the comparison that the July filing left the business impact unquantified.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "CRWD:0001535527-24-000017:f03",
+          "matched_ai_indices": [
+            0
+          ],
+          "rationale": "AI finding 0 correctly reports Q2 revenue of $963.9 million, up 32% year-over-year. However, it does not compare this result to the prior Q2 guidance range (upper end of $961.2 million from June's forecast), which is the specific comparison the reference finding tests for. It instead compares to the previous quarter's revenue.",
+          "coverage": "partial",
+          "classification_acceptable": true
+        }
+      ],
+      "extra_ai_indices": [
+        3,
+        4
+      ],
+      "ai_findings_total": 5
+    },
+    {
+      "case_id": "AMD:0000002488-24-000161",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "AMD:0000002488-24-000161:f01",
+          "matched_ai_indices": [
+            0,
+            1
+          ],
+          "rationale": "AI finding 0 reports Q3 revenue of $6.8 billion and compares it to the $6.7 billion midpoint from July, capturing the beat against guidance. AI finding 1 reports data-center revenue of $3.5 billion. However, neither finding explicitly states the 17% sequential overall revenue growth or the 25% sequential data-center growth from $2.8 billion in Q2. Finding 1 uses year-over-year comparisons rather than sequential. The current-period numbers are correct but the specific sequential comparison (Q2 to Q3) referenced in the expected facts is not fully articulated.",
+          "coverage": "partial",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "AMD:0000002488-24-000161:f02",
+          "matched_ai_indices": [
+            2
+          ],
+          "rationale": "AI finding 2 states AMD expects Q4 2024 revenue of approximately $7.5 billion \u00b1 $300 million with a non-GAAP gross margin of roughly 54%, and notes the sequential increase from Q3's $6.8 billion. This captures both the guidance figures and the implied sequential growth comparison. Full coverage.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "AMD:0000002488-24-000161:f03",
+          "matched_ai_indices": [
+            4
+          ],
+          "rationale": "AI finding 4 addresses the ZT Systems acquisition agreement and expected closing timeline. However, it classifies the finding as 'new' and claims the acquisition was not mentioned in the July earnings presentation, whereas the reference finding notes it was announced on August 19 and is repeated news. The classification 'new' is not acceptable; the acceptable classification is 'repeated'.",
+          "coverage": "full",
+          "classification_acceptable": false
+        },
+        {
+          "finding_id": "AMD:0000002488-24-000161:f04",
+          "matched_ai_indices": [
+            5
+          ],
+          "rationale": "AI finding 5 reports gaming revenue fell 69% year-over-year to $462 million, matching the expected facts. It also provides the comparison that the decline deepened from the 59% YoY drop in Q2, which supports the sequential decline narrative. However, it does not explicitly state the 29% sequential decline or the Q2 figure of $648 million. The YoY comparison and current-period figures are correct. The classification 'repeated' is not acceptable; acceptable classifications are 'new' or 'changed'.",
+          "coverage": "partial",
+          "classification_acceptable": false
+        }
+      ],
+      "extra_ai_indices": [
+        3
+      ],
+      "ai_findings_total": 6
+    },
+    {
+      "case_id": "AMD:0000002488-24-000172",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "AMD:0000002488-24-000172:f01",
+          "matched_ai_indices": [
+            0
+          ],
+          "rationale": "AI finding 0 clearly states that Philip Carter was appointed Corporate Vice President and Chief Accounting Officer effective November 18, 2024, succeeding Darla Smith, who resigned. It also mentions the transition period through January 17, 2025. This covers all expected facts and the comparison to the prior principal accounting officer.",
+          "coverage": "full",
+          "classification_acceptable": true
+        }
+      ],
+      "extra_ai_indices": [
+        1,
+        2
+      ],
+      "ai_findings_total": 3
+    },
+    {
+      "case_id": "CRWD:0001535527-24-000024",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "CRWD:0001535527-24-000024:f01",
+          "matched_ai_indices": [
+            6
+          ],
+          "rationale": "AI finding 6 states the FY2025 revenue guidance range of $3,923.8\u2013$3,930.5M (midpoint $3,927.15M) and compares it to the prior guidance of $3,890.0\u2013$3,902.2M. However, the reference finding's key comparison is that this midpoint is $31.05M above August's $3,896.1M midpoint but still $66.35M below June's $3,993.5M midpoint, representing only a partial recovery. AI finding 6 compares to the prior range but does not mention the June (pre-outage) guidance or characterize this as a partial recovery vs. full recovery. The core expected fact (the new guidance range) is stated, but the specific comparison to both August and June midpoints is not fully captured.",
+          "coverage": "partial",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "CRWD:0001535527-24-000024:f02",
+          "matched_ai_indices": [
+            1
+          ],
+          "rationale": "AI finding 1 states Q3 FY2025 revenue of $1.01 billion (\u2248$1,010.2M), up 29% YoY, matching the expected facts. However, the reference finding's comparison is that August guidance was $979.2\u2013$984.7M and the result exceeded the top of that range by $25.5M. AI finding 1 does not mention the August guidance range or the beat against it; it only compares to prior quarters' revenue. The expected facts are stated but the specific comparison is missing.",
+          "coverage": "partial",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "CRWD:0001535527-24-000024:f03",
+          "matched_ai_indices": [
+            0
+          ],
+          "rationale": "AI finding 0 states ARR reached $4.02 billion, up 27% YoY, and net-new ARR was $153.0M in Q3. It also explicitly compares to Q2's $217.6M net-new ARR and 32% growth, noting the deceleration. This covers both the expected facts and the specific comparison (sequential decline in net-new ARR from Q2).",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "CRWD:0001535527-24-000024:f04",
+          "matched_ai_indices": [
+            3
+          ],
+          "rationale": "AI finding 3 states GAAP net loss attributable to CrowdStrike of $16.8M in Q3 and non-GAAP diluted EPS of $0.93, matching the expected facts exactly. It also compares to Q2 GAAP net income of $47.0M, capturing the swing from profit to loss. It notes that non-GAAP net income remained positive at $234.3M ($0.93/share), illustrating the divergence between GAAP and non-GAAP. This fully covers the expected facts and comparison.",
+          "coverage": "full",
+          "classification_acceptable": true
+        }
+      ],
+      "extra_ai_indices": [
+        2,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "ai_findings_total": 13
+    }
+  ]
+}
