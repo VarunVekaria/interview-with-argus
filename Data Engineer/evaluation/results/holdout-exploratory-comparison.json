@@ -1,0 +1,126 @@
+{
+  "disclosure": "EXPLORATORY. Per README task 4, the frozen/primary transfer result is the original-config run (runs/holdout-final). This second run changed the retrieval approach AFTER inspecting the first holdout result, so it is disclosed and labelled exploratory. No accuracy comparison is possible in either direction: holdout labels are withheld, so only label-free behavior is compared here.",
+  "caveat": "Not a clean single-variable comparison: the exploratory run differs from the frozen run in BOTH retrieval (per-chunk+recency+RRF, history_chunks 12->24) AND generation ceilings (fresh_prediction_v2: timeout 90->180s, max_output_tokens 6000->8000, plus bounded retry).",
+  "frozen_primary": {
+    "label": "FROZEN (primary) - original config, history_chunks=12",
+    "run": "runs/holdout-final",
+    "filings": 3,
+    "completed": 3,
+    "errors": 0,
+    "findings_total": 14,
+    "quotes_total": 28,
+    "quotes_verified": 28,
+    "quotes_verified_rate": 1.0,
+    "findings_with_no_prior_evidence": 8,
+    "prior_evidence_empty_rate": 0.5714285714285714,
+    "classification_mix": {
+      "repeated": 1,
+      "new": 8,
+      "changed": 5
+    },
+    "total_cost_usd": 0.0612,
+    "total_latency_ms": 77533,
+    "per_filing": [
+      {
+        "filing_id": "0001045810-24-000262",
+        "status": "completed",
+        "findings": 6,
+        "quotes_verified": "12/12",
+        "current_chunks": "16/28",
+        "prior_chunks": 12,
+        "prior_chars": 19140,
+        "latency_ms": 33876,
+        "cost_usd": 0.0255,
+        "tokens_in": 15498,
+        "tokens_out": 5924
+      },
+      {
+        "filing_id": "0001045810-24-000300",
+        "status": "completed",
+        "findings": 3,
+        "quotes_verified": "5/5",
+        "current_chunks": "3/3",
+        "prior_chunks": 12,
+        "prior_chars": 19127,
+        "latency_ms": 21754,
+        "cost_usd": 0.0206,
+        "tokens_in": 8590,
+        "tokens_out": 5433
+      },
+      {
+        "filing_id": "0001045810-24-000315",
+        "status": "completed",
+        "findings": 5,
+        "quotes_verified": "11/11",
+        "current_chunks": "16/28",
+        "prior_chunks": 12,
+        "prior_chars": 19137,
+        "latency_ms": 21903,
+        "cost_usd": 0.0151,
+        "tokens_in": 15532,
+        "tokens_out": 4221
+      }
+    ]
+  },
+  "exploratory": {
+    "label": "EXPLORATORY - per-chunk+recency+RRF retrieval, history_chunks=24",
+    "run": "runs/holdout-exploratory-retrieval-v2",
+    "filings": 3,
+    "completed": 3,
+    "errors": 0,
+    "findings_total": 15,
+    "quotes_total": 30,
+    "quotes_verified": 29,
+    "quotes_verified_rate": 0.9666666666666667,
+    "findings_with_no_prior_evidence": 4,
+    "prior_evidence_empty_rate": 0.26666666666666666,
+    "classification_mix": {
+      "new": 5,
+      "changed": 9,
+      "repeated": 1
+    },
+    "total_cost_usd": 0.0767,
+    "total_latency_ms": 73158,
+    "per_filing": [
+      {
+        "filing_id": "0001045810-24-000262",
+        "status": "completed",
+        "findings": 6,
+        "quotes_verified": "11/11",
+        "current_chunks": "16/28",
+        "prior_chunks": 24,
+        "prior_chars": 38277,
+        "latency_ms": 37027,
+        "cost_usd": 0.0331,
+        "tokens_in": 22821,
+        "tokens_out": 7217
+      },
+      {
+        "filing_id": "0001045810-24-000300",
+        "status": "completed",
+        "findings": 4,
+        "quotes_verified": "5/5",
+        "current_chunks": "3/3",
+        "prior_chunks": 24,
+        "prior_chars": 34810,
+        "latency_ms": 13015,
+        "cost_usd": 0.0164,
+        "tokens_in": 14543,
+        "tokens_out": 3044
+      },
+      {
+        "filing_id": "0001045810-24-000315",
+        "status": "completed",
+        "findings": 5,
+        "quotes_verified": "13/14",
+        "current_chunks": "16/28",
+        "prior_chunks": 24,
+        "prior_chars": 37432,
+        "latency_ms": 23116,
+        "cost_usd": 0.0272,
+        "tokens_in": 22875,
+        "tokens_out": 5264
+      }
+    ]
+  }
+}

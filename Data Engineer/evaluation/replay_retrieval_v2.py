@@ -202,10 +202,19 @@ def run_replay_v2(dataset: Dataset, output: Path, model: str | None = None) -> d
 
 
 if __name__ == "__main__":
+    import argparse
     import sys
 
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-    dataset = Dataset("data/pilot")
-    output = Path("runs/retrieval-v2-replay")
-    result = run_replay_v2(dataset, output)
-    print(json.dumps({"status": result["status"], "errors": result["errors"], "output": str(output)}, indent=2))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--dataset", type=Path, default=Path("data/pilot"))
+    parser.add_argument("--output", type=Path, default=Path("runs/retrieval-v2-replay"))
+    parser.add_argument("--model", default=None, help="Model alias; defaults to ARGUS_MODEL")
+    args = parser.parse_args()
+    result = run_replay_v2(Dataset(args.dataset), args.output, model=args.model)
+    print(
+        json.dumps(
+            {"status": result["status"], "errors": result["errors"], "output": str(args.output)},
+            indent=2,
+        )
+    )
