@@ -1,0 +1,312 @@
+{
+  "case_sets": {
+    "both_completed": [
+      "AMD:0000002488-24-000109",
+      "AMD:0000002488-24-000115",
+      "AMD:0000002488-24-000161",
+      "AMD:0000002488-24-000172",
+      "AMD:0001193125-24-202457",
+      "CRWD:0001104659-24-081571",
+      "CRWD:0001535527-24-000017",
+      "CRWD:0001535527-24-000024"
+    ],
+    "baseline_only_completed": [
+      "AMD:0000002488-24-000121"
+    ],
+    "candidate_only_completed": []
+  },
+  "aggregate": {
+    "matched_cases": 8,
+    "baseline": {
+      "cases": 8,
+      "reference_findings_total": 20,
+      "coverage_full": 13,
+      "coverage_partial": 6,
+      "coverage_none": 1,
+      "recall_strict": 0.65,
+      "recall_lenient": 0.95,
+      "classification_agreement_rate": 0.9473684210526315,
+      "evidence_quotes_verified_rate": 0.8947368421052632
+    },
+    "candidate": {
+      "cases": 8,
+      "reference_findings_total": 20,
+      "coverage_full": 12,
+      "coverage_partial": 8,
+      "coverage_none": 0,
+      "recall_strict": 0.6,
+      "recall_lenient": 1.0,
+      "classification_agreement_rate": 0.9,
+      "evidence_quotes_verified_rate": 0.8981481481481481
+    },
+    "delta": {
+      "recall_strict": -0.050000000000000044,
+      "recall_lenient": 0.050000000000000044,
+      "classification_agreement_rate": -0.047368421052631504,
+      "evidence_quotes_verified_rate": 0.003411306042884976
+    }
+  },
+  "per_case": [
+    {
+      "case_id": "AMD:0000002488-24-000109",
+      "status": "both_completed",
+      "baseline": {
+        "coverage_full": 2,
+        "coverage_partial": 0,
+        "coverage_none": 0,
+        "recall_strict": 1.0,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 1.0,
+        "evidence_quotes_verified_rate": 1.0
+      },
+      "candidate": {
+        "coverage_full": 2,
+        "coverage_partial": 0,
+        "coverage_none": 0,
+        "recall_strict": 1.0,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 1.0,
+        "evidence_quotes_verified_rate": 0.9473684210526315
+      },
+      "finding_flips": []
+    },
+    {
+      "case_id": "AMD:0000002488-24-000115",
+      "status": "both_completed",
+      "baseline": {
+        "coverage_full": 2,
+        "coverage_partial": 0,
+        "coverage_none": 0,
+        "recall_strict": 1.0,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 1.0,
+        "evidence_quotes_verified_rate": 0.7142857142857143
+      },
+      "candidate": {
+        "coverage_full": 1,
+        "coverage_partial": 1,
+        "coverage_none": 0,
+        "recall_strict": 0.5,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 1.0,
+        "evidence_quotes_verified_rate": 1.0
+      },
+      "finding_flips": [
+        {
+          "finding_id": "AMD:0000002488-24-000115:f01",
+          "baseline_coverage": "full",
+          "candidate_coverage": "partial",
+          "baseline_classification_acceptable": true,
+          "candidate_classification_acceptable": true
+        }
+      ]
+    },
+    {
+      "case_id": "AMD:0000002488-24-000121",
+      "status": "baseline_only_completed",
+      "baseline": {
+        "coverage_full": 3,
+        "coverage_partial": 0,
+        "coverage_none": 0,
+        "recall_strict": 1.0,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 1.0,
+        "evidence_quotes_verified_rate": 0.9230769230769231
+      },
+      "candidate": null,
+      "candidate_output_state": "error",
+      "finding_flips": []
+    },
+    {
+      "case_id": "AMD:0000002488-24-000161",
+      "status": "both_completed",
+      "baseline": {
+        "coverage_full": 3,
+        "coverage_partial": 1,
+        "coverage_none": 0,
+        "recall_strict": 0.75,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 1.0,
+        "evidence_quotes_verified_rate": 0.9393939393939394
+      },
+      "candidate": {
+        "coverage_full": 2,
+        "coverage_partial": 2,
+        "coverage_none": 0,
+        "recall_strict": 0.5,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 0.5,
+        "evidence_quotes_verified_rate": 0.8
+      },
+      "finding_flips": [
+        {
+          "finding_id": "AMD:0000002488-24-000161:f01",
+          "baseline_coverage": "full",
+          "candidate_coverage": "partial",
+          "baseline_classification_acceptable": true,
+          "candidate_classification_acceptable": true
+        },
+        {
+          "finding_id": "AMD:0000002488-24-000161:f03",
+          "baseline_coverage": "full",
+          "candidate_coverage": "full",
+          "baseline_classification_acceptable": true,
+          "candidate_classification_acceptable": false
+        },
+        {
+          "finding_id": "AMD:0000002488-24-000161:f04",
+          "baseline_coverage": "partial",
+          "candidate_coverage": "partial",
+          "baseline_classification_acceptable": true,
+          "candidate_classification_acceptable": false
+        }
+      ]
+    },
+    {
+      "case_id": "AMD:0000002488-24-000172",
+      "status": "both_completed",
+      "baseline": {
+        "coverage_full": 1,
+        "coverage_partial": 0,
+        "coverage_none": 0,
+        "recall_strict": 1.0,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 1.0,
+        "evidence_quotes_verified_rate": 0.8333333333333334
+      },
+      "candidate": {
+        "coverage_full": 1,
+        "coverage_partial": 0,
+        "coverage_none": 0,
+        "recall_strict": 1.0,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 1.0,
+        "evidence_quotes_verified_rate": 0.8571428571428571
+      },
+      "finding_flips": []
+    },
+    {
+      "case_id": "AMD:0001193125-24-202457",
+      "status": "both_completed",
+      "baseline": {
+        "coverage_full": 1,
+        "coverage_partial": 1,
+        "coverage_none": 0,
+        "recall_strict": 0.5,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 1.0,
+        "evidence_quotes_verified_rate": 1.0
+      },
+      "candidate": {
+        "coverage_full": 0,
+        "coverage_partial": 2,
+        "coverage_none": 0,
+        "recall_strict": 0.0,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 1.0,
+        "evidence_quotes_verified_rate": 1.0
+      },
+      "finding_flips": [
+        {
+          "finding_id": "AMD:0001193125-24-202457:f01",
+          "baseline_coverage": "full",
+          "candidate_coverage": "partial",
+          "baseline_classification_acceptable": true,
+          "candidate_classification_acceptable": true
+        }
+      ]
+    },
+    {
+      "case_id": "CRWD:0001104659-24-081571",
+      "status": "both_completed",
+      "baseline": {
+        "coverage_full": 2,
+        "coverage_partial": 0,
+        "coverage_none": 0,
+        "recall_strict": 1.0,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 0.5,
+        "evidence_quotes_verified_rate": 0.75
+      },
+      "candidate": {
+        "coverage_full": 2,
+        "coverage_partial": 0,
+        "coverage_none": 0,
+        "recall_strict": 1.0,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 1.0,
+        "evidence_quotes_verified_rate": 1.0
+      },
+      "finding_flips": [
+        {
+          "finding_id": "CRWD:0001104659-24-081571:f02",
+          "baseline_coverage": "full",
+          "candidate_coverage": "full",
+          "baseline_classification_acceptable": false,
+          "candidate_classification_acceptable": true
+        }
+      ]
+    },
+    {
+      "case_id": "CRWD:0001535527-24-000017",
+      "status": "both_completed",
+      "baseline": {
+        "coverage_full": 2,
+        "coverage_partial": 1,
+        "coverage_none": 0,
+        "recall_strict": 0.6666666666666666,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 1.0,
+        "evidence_quotes_verified_rate": 0.7222222222222222
+      },
+      "candidate": {
+        "coverage_full": 2,
+        "coverage_partial": 1,
+        "coverage_none": 0,
+        "recall_strict": 0.6666666666666666,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 1.0,
+        "evidence_quotes_verified_rate": 0.8181818181818182
+      },
+      "finding_flips": []
+    },
+    {
+      "case_id": "CRWD:0001535527-24-000024",
+      "status": "both_completed",
+      "baseline": {
+        "coverage_full": 0,
+        "coverage_partial": 3,
+        "coverage_none": 1,
+        "recall_strict": 0.0,
+        "recall_lenient": 0.75,
+        "classification_agreement_rate": 1.0,
+        "evidence_quotes_verified_rate": 0.9545454545454546
+      },
+      "candidate": {
+        "coverage_full": 2,
+        "coverage_partial": 2,
+        "coverage_none": 0,
+        "recall_strict": 0.5,
+        "recall_lenient": 1.0,
+        "classification_agreement_rate": 1.0,
+        "evidence_quotes_verified_rate": 0.8666666666666667
+      },
+      "finding_flips": [
+        {
+          "finding_id": "CRWD:0001535527-24-000024:f03",
+          "baseline_coverage": "partial",
+          "candidate_coverage": "full",
+          "baseline_classification_acceptable": true,
+          "candidate_classification_acceptable": true
+        },
+        {
+          "finding_id": "CRWD:0001535527-24-000024:f04",
+          "baseline_coverage": "none",
+          "candidate_coverage": "full",
+          "baseline_classification_acceptable": false,
+          "candidate_classification_acceptable": true
+        }
+      ]
+    }
+  ]
+}
