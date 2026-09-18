@@ -276,13 +276,24 @@ Caveats: not a clean single-variable test (generation limits changed too, which
 probably explains the reliability difference), and n=3 filings with no labels is
 directional at best.
 
-# Conclusion
 
+# AI-assistance disclosure — the email calls this out directly: 
+Used Claude code primarily. Discussed workflows and also made evaluations against ground truth to surface any edge cases or anomalies. 
+
+
+# Time spent 
+I deep doive into the workings of the system first. Made a lot of observations and fixed many edge cases. Took me around 8-9 hrs spread over two days. 
+
+# Repro block — reference version 1.0.1
+baseline at data/pilot/baseline, frozen config, judge model anthropic-strong-v1, dependencies added: none, total spend ~$3.09 of $25.
+
+# "What I prioritized and what I left unfinished" —
+I went deep on retrieval rather than broad across many shallow experiments; testing the system against when the model is changed or when other parameters are changed is pending.
+
+# Conclusion
 The pipeline is honest — it doesn't fabricate, and it says when it lacks context. It
 reliably finds the news. Where it falls down is telling you what *changed*, and I
 traced that to retrieval failing to surface the comparison figures 81% of the time.
 Fixing retrieval tripled that hit rate, but the graded score stayed flat because the
 bottleneck shifted from *having* the comparison to *choosing the right one* — which
 is what the fact-level retrieval architecture above is designed to solve.
-
-
