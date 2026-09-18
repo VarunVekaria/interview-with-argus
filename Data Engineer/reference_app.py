@@ -9,7 +9,7 @@ from net_new.references import load_references
 
 ROOT = Path(__file__).resolve().parent
 st.set_page_config(page_title="Reference examples · Argus", layout="wide")
-st.html(f"<style>{(ROOT / 'ui.css').read_text()}</style>")
+st.html(f"<style>{(ROOT / 'ui.css').read_text(encoding='utf-8')}</style>")
 st.caption("ARGUS · DEVELOPMENT REFERENCES")
 st.title("Reference examples")
 st.caption(

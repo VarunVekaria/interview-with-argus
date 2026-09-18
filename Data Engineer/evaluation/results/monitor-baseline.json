@@ -1,0 +1,63 @@
+{
+  "filings_total": 9,
+  "filings_completed": 9,
+  "alerts": [
+    {
+      "check": "evidence_validity",
+      "severity": "warning",
+      "filing_id": "0000002488-24-000115",
+      "message": "quotes_verified_rate=71.4% below floor 80% (baseline established ~90%)"
+    },
+    {
+      "check": "evidence_corruption",
+      "severity": "error",
+      "filing_id": "0000002488-24-000115",
+      "message": "embedded newline in evidence quote (known decoding-corruption signature): 'Senior Vice President of the Artificial Intelligence Group (AIG) Vamsi Boppana w'"
+    },
+    {
+      "check": "evidence_corruption",
+      "severity": "error",
+      "filing_id": "0000002488-24-000115",
+      "message": "embedded newline in evidence quote (known decoding-corruption signature): 'The Company is currently preparing a retirement transition agreement to ensure a'"
+    },
+    {
+      "check": "evidence_validity",
+      "severity": "warning",
+      "filing_id": "0001104659-24-081571",
+      "message": "quotes_verified_rate=75.0% below floor 80% (baseline established ~90%)"
+    },
+    {
+      "check": "evidence_validity",
+      "severity": "warning",
+      "filing_id": "0001535527-24-000017",
+      "message": "quotes_verified_rate=72.2% below floor 80% (baseline established ~90%)"
+    },
+    {
+      "check": "evidence_corruption",
+      "severity": "error",
+      "filing_id": "0001535527-24-000017",
+      "message": "embedded newline in evidence quote (known decoding-corruption signature): 'Total Channel File 291 Incident related costs $ 5,132 $ \\ndef\\n\\ndef $ 5,132 $ \\ndef'"
+    },
+    {
+      "check": "truncation",
+      "severity": "warning",
+      "filing_id": "0001193125-24-202457",
+      "message": "only 6.3% of current document included (15/239 chunks) -- below floor 20% (worst baseline case was 6.3%)"
+    }
+  ],
+  "alerts_by_severity": {
+    "error": 3,
+    "warning": 4
+  },
+  "prior_evidence_empty": {
+    "findings_total": 74,
+    "findings_with_no_prior_evidence": 48,
+    "rate": 0.6486486486486487
+  },
+  "invisible": [
+    "Factual correctness of any specific claim -- these checks never compare against a reference or ground truth, only against the run's own output shape and the real source documents (for quote grounding).",
+    "Whether a 'new'/'changed'/'repeated'/'uncertain' label is the CORRECT one for a given finding -- classification correctness needs the reference's acceptable_classifications, so it is graded, never monitored.",
+    "Whether a finding captures the prior-period COMPARISON, as opposed to just restating the current fact -- the recall_strict vs recall_lenient gap this whole investigation is about requires a reference and a judge; it is structurally invisible to a label-free monitor.",
+    "Whether an unmatched 'extra' finding is a genuinely good one -- evidence validity confirms the quote is real, not that the finding itself is worthwhile."
+  ]
+}

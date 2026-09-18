@@ -17,8 +17,8 @@ def chart_component():
     # Serve the installed Plotly library locally; no CDN or additional package is needed.
     runtime = ROOT / "artifacts" / "price-chart-runtime"
     runtime.mkdir(parents=True, exist_ok=True)
-    (runtime / "index.html").write_text((ROOT / "ui/price_chart.html").read_text())
-    (runtime / "plotly.min.js").write_text(get_plotlyjs())
+    (runtime / "index.html").write_text((ROOT / "ui/price_chart.html").read_text(encoding="utf-8"), encoding="utf-8")
+    (runtime / "plotly.min.js").write_text(get_plotlyjs(), encoding="utf-8")
     return declare_component("price_history", path=runtime)
 
 

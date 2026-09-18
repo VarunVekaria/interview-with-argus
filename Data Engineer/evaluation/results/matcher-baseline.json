@@ -1,0 +1,348 @@
+{
+  "run": "data/pilot/baseline",
+  "references": "references/development.jsonl",
+  "judge_model": "anthropic-strong-v1",
+  "total_judge_cost_usd": 0.21296,
+  "results": [
+    {
+      "case_id": "AMD:0000002488-24-000109",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "AMD:0000002488-24-000109:f01",
+          "matched_ai_indices": [
+            0,
+            1,
+            2
+          ],
+          "rationale": "AI findings 0, 1, and 2 together state all four executives' old and new salary figures exactly matching the reference: Su $1.20M\u2192$1.26M, Hu $725K\u2192$760K, Guido $725K\u2192$750K, Norrod $710K\u2192$750K. The comparison (old vs. new salaries) is explicitly provided in each finding.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "AMD:0000002488-24-000109:f02",
+          "matched_ai_indices": [
+            3,
+            4
+          ],
+          "rationale": "AI finding 3 states the target equity award values for all four executives ($28.68M for Su, $8M for Hu, $6M for Guido, $7M for Norrod) under the 2023 Equity Incentive Plan. AI finding 4 specifies Su's allocation as 75% PRSUs and 25% Stock Options. Together these cover all expected facts. The comparison context (new awards under existing plan, target values not guaranteed payouts) is correctly reflected.",
+          "coverage": "full",
+          "classification_acceptable": true
+        }
+      ],
+      "extra_ai_indices": [
+        5
+      ],
+      "ai_findings_total": 6
+    },
+    {
+      "case_id": "AMD:0000002488-24-000115",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "AMD:0000002488-24-000115:f01",
+          "matched_ai_indices": [
+            0,
+            3
+          ],
+          "rationale": "AI finding 0 correctly states Victor Peng's retirement effective August 30, 2024. AI finding 3 adds the advisory/transition arrangement detail. Together they capture the expected facts and the comparison (change from serving as president to a dated retirement plan). Classification 'new' is acceptable.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "AMD:0000002488-24-000115:f02",
+          "matched_ai_indices": [
+            1,
+            2
+          ],
+          "rationale": "AI finding 1 states Boppana's expanded responsibilities including the Instinct data-center AI accelerator business and his new direct report to Lisa Su. AI finding 2 states Salil Raje continues in his embedded role and now reports directly to Lisa Su. Together these fully cover the expected facts and the comparison about changed reporting lines and AI responsibilities. Classification 'new' is acceptable.",
+          "coverage": "full",
+          "classification_acceptable": true
+        }
+      ],
+      "extra_ai_indices": [],
+      "ai_findings_total": 4
+    },
+    {
+      "case_id": "CRWD:0001104659-24-081571",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "CRWD:0001104659-24-081571:f01",
+          "matched_ai_indices": [
+            0
+          ],
+          "rationale": "AI finding 0 states the specific facts: the update affected certain Windows systems at 04:09 UTC on July 19, was reverted at 05:27 UTC, and CrowdStrike continues working with impacted customers to restore systems. It also correctly identifies this as a newly disclosed incident versus prior generic risk warnings. Classification 'new' is acceptable.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "CRWD:0001104659-24-081571:f02",
+          "matched_ai_indices": [
+            1
+          ],
+          "rationale": "AI finding 1 states that CrowdStrike continues to evaluate the impact on its business and operations, characterizes the situation as evolving, and notes no financial estimates or customer retention disclosures were provided. These match the expected facts. However, the classification is 'new' rather than 'uncertain', which is the only acceptable classification for this finding, since the key point is that financial consequences remain unquantified and uncertain.",
+          "coverage": "full",
+          "classification_acceptable": false
+        }
+      ],
+      "extra_ai_indices": [
+        2
+      ],
+      "ai_findings_total": 3
+    },
+    {
+      "case_id": "AMD:0000002488-24-000121",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "AMD:0000002488-24-000121:f01",
+          "matched_ai_indices": [
+            0
+          ],
+          "rationale": "AI finding 0 states Q2 revenue of $5.835 billion, up 9% YoY and 7% sequentially, and explicitly compares it to the prior Q2 guidance of ~$5.7 billion \u00b1$300 million, noting AMD came in above the midpoint. This fully covers the expected facts and the comparison.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "AMD:0000002488-24-000121:f02",
+          "matched_ai_indices": [
+            1,
+            5
+          ],
+          "rationale": "AI finding 1 reports Data Center revenue of $2.834 billion, up 21% sequentially from $2.337 billion in Q1, and AI finding 5 reports Gaming revenue of $648 million, down 30% sequentially from $922 million. Together these cover both expected facts and the comparison to Q1 figures showing intensifying data-center growth and gaming weakness.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "AMD:0000002488-24-000121:f03",
+          "matched_ai_indices": [
+            2
+          ],
+          "rationale": "AI finding 2 states Q3 2024 revenue guidance of approximately $6.7 billion \u00b1$300 million with ~53.5% non-GAAP gross margin, and notes this is a step-up from Q2 actuals of $5.835 billion, capturing both the expected facts and the comparison showing this is new forward guidance implying ~15% sequential growth.",
+          "coverage": "full",
+          "classification_acceptable": true
+        }
+      ],
+      "extra_ai_indices": [
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "ai_findings_total": 13
+    },
+    {
+      "case_id": "AMD:0001193125-24-202457",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "AMD:0001193125-24-202457:f01",
+          "matched_ai_indices": [
+            0,
+            1,
+            2
+          ],
+          "rationale": "AI finding 0 identifies the acquisition of ZT Systems valued at up to $4.9 billion as a new transaction. AI findings 1 and 2 together detail the $3.375B cash + $1.125B stock closing consideration and up to $400M contingent consideration. Finding 0 notes the agreement is signed (definitive Stock Purchase Agreement), and closing is subject to approvals (finding 3 adds timeline details). The expected facts about the $4.9B total value, up to $400M contingent consideration, and the pending-closing status are all captured. The comparison about this being a new acquisition commitment versus prior AI-chip growth disclosures is implicitly addressed by classifying the deal as 'new'. Full coverage.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "AMD:0001193125-24-202457:f02",
+          "matched_ai_indices": [
+            4
+          ],
+          "rationale": "AI finding 4 states that AMD plans to divest ZT Systems' manufacturing business following the acquisition closing. This captures the key expected fact about separating the manufacturing business. However, it does not mention AMD's intent to retain the systems-design and customer-enablement capabilities, nor does it mention seeking a 'strategic partner' for the manufacturing sale or the projected non-GAAP accretion by end of 2025. The core factual distinction\u2014planning to sell the manufacturing business\u2014is present, but the fuller context about retaining design/enablement capabilities is absent. This is partial coverage.",
+          "coverage": "partial",
+          "classification_acceptable": true
+        }
+      ],
+      "extra_ai_indices": [
+        3,
+        5,
+        6,
+        7
+      ],
+      "ai_findings_total": 8
+    },
+    {
+      "case_id": "CRWD:0001535527-24-000017",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "CRWD:0001535527-24-000017:f01",
+          "matched_ai_indices": [
+            3
+          ],
+          "rationale": "AI finding 3 states FY2025 total revenue guidance moved from $3,976\u2013$4,011 million to $3,890\u2013$3,902 million, directly matching the expected facts and the comparison to the prior June forecast. The classification 'changed' is acceptable.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "CRWD:0001535527-24-000017:f02",
+          "matched_ai_indices": [
+            2
+          ],
+          "rationale": "AI finding 2 explicitly states the estimated $30 million per quarter subscription revenue impact in each remaining fiscal quarter and high-single-digit millions in professional services revenue impact in H2 FY2025 from customer commitment package incentives, and notes the prior July 8-K contained no financial quantification. This fully covers the expected facts and the comparison.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "CRWD:0001535527-24-000017:f03",
+          "matched_ai_indices": [
+            0
+          ],
+          "rationale": "AI finding 0 states Q2 FY2025 total revenue of $963.9 million (+32% YoY), matching the expected facts. However, it does not compare the result to the prior June Q2 guidance range ($922.0\u2013$961.2 million) or note that $963.9 million exceeded the upper end by $2.7 million. It only compares to Q1 FY2025 sequentially. The specific comparison is missing, so coverage is partial.",
+          "coverage": "partial",
+          "classification_acceptable": true
+        }
+      ],
+      "extra_ai_indices": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "ai_findings_total": 10
+    },
+    {
+      "case_id": "AMD:0000002488-24-000161",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "AMD:0000002488-24-000161:f01",
+          "matched_ai_indices": [
+            0,
+            1
+          ],
+          "rationale": "AI finding 0 states Q3 revenue of $6.819 billion, up 17% sequentially, and notes it came in slightly above the $6.7 billion guidance midpoint. AI finding 1 states data-center revenue of $3.549 billion, up 25% sequentially from $2.834 billion. Together these cover all expected facts and the comparison to the prior midpoint and Q2 data-center figure.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "AMD:0000002488-24-000161:f02",
+          "matched_ai_indices": [
+            4
+          ],
+          "rationale": "AI finding 4 states Q4 revenue guidance of approximately $7.5 billion \u00b1$300 million and non-GAAP gross margin of approximately 54%, and notes this replaces the prior Q3 outlook. The midpoint implies ~10% sequential growth from Q3's $6.819B, though the AI finding doesn't explicitly state that percentage. The core expected facts (Q4 guidance figures) and the comparison (new Q4 outlook replacing Q3 guidance) are present.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "AMD:0000002488-24-000161:f03",
+          "matched_ai_indices": [
+            7
+          ],
+          "rationale": "AI finding 7 notes the ZT Systems acquisition was previously announced in August 2024 and classifies it as 'repeated,' matching the reference finding's expectation that this is already-known news reiterated in Q3 highlights.",
+          "coverage": "full",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "AMD:0000002488-24-000161:f04",
+          "matched_ai_indices": [
+            8
+          ],
+          "rationale": "AI finding 8 states Q3 gaming revenue of $462 million, down 69% year-over-year. However, it does not mention the 29% sequential decline or the Q2 figure of $648 million, which is part of the expected comparison. The year-over-year decline is stated but the sequential comparison is missing.",
+          "coverage": "partial",
+          "classification_acceptable": true
+        }
+      ],
+      "extra_ai_indices": [
+        2,
+        3,
+        5,
+        6,
+        9,
+        10,
+        11,
+        12
+      ],
+      "ai_findings_total": 13
+    },
+    {
+      "case_id": "AMD:0000002488-24-000172",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "AMD:0000002488-24-000172:f01",
+          "matched_ai_indices": [
+            0,
+            1
+          ],
+          "rationale": "AI finding 0 covers Darla Smith's resignation as chief accounting officer effective November 18, 2024, and AI finding 1 covers Philip Carter's appointment as corporate vice president, chief accounting officer, and principal accounting officer effective November 18, 2024. Together they capture the key expected facts (the officer transition from Smith to Carter) and the comparison context (new event not present in prior filings, no dispute or disagreement implied). The classification 'new' is acceptable.",
+          "coverage": "full",
+          "classification_acceptable": true
+        }
+      ],
+      "extra_ai_indices": [
+        2,
+        3
+      ],
+      "ai_findings_total": 4
+    },
+    {
+      "case_id": "CRWD:0001535527-24-000024",
+      "output_state": "completed",
+      "matches": [
+        {
+          "finding_id": "CRWD:0001535527-24-000024:f01",
+          "matched_ai_indices": [
+            5
+          ],
+          "rationale": "AI finding 5 states the FY2025 revenue guidance range of $3,923.8\u2013$3,930.5 million and notes it replaces prior guidance from August 2024. However, it does not provide the specific prior midpoints ($3,896.1M from August or $3,993.5M from June) needed to establish the partial-recovery comparison. The expected facts (the guidance range) are stated, but the comparison is incomplete.",
+          "coverage": "partial",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "CRWD:0001535527-24-000024:f02",
+          "matched_ai_indices": [
+            1
+          ],
+          "rationale": "AI finding 1 reports Q3 revenue of $1.01 billion (effectively $1,010.2M) and 29% YoY growth, matching the expected facts. However, it does not mention the August guidance range of $979.2\u2013$984.7 million or that the result exceeded that range by $25.5 million, so the specific comparison is missing.",
+          "coverage": "partial",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "CRWD:0001535527-24-000024:f03",
+          "matched_ai_indices": [
+            0
+          ],
+          "rationale": "AI finding 0 reports ARR of $4.02 billion, 27% YoY growth, and $153.0 million net new ARR, matching all expected facts. However, it does not mention Q2's $217.6 million net-new ARR or the 32% ARR growth rate, so the sequential decline comparison is absent.",
+          "coverage": "partial",
+          "classification_acceptable": true
+        },
+        {
+          "finding_id": "CRWD:0001535527-24-000024:f04",
+          "matched_ai_indices": [
+            2,
+            3
+          ],
+          "rationale": "AI finding 2 discusses the GAAP operating loss of $55.7 million but does not state the specific GAAP net loss of $16.8 million attributable to CrowdStrike, which is a different line item. AI finding 3 reports non-GAAP operating income of $194.9 million but not the non-GAAP diluted EPS of $0.93. Neither finding states the specific expected facts (GAAP net loss of $16.8M and non-GAAP diluted EPS of $0.93).",
+          "coverage": "none",
+          "classification_acceptable": false
+        }
+      ],
+      "extra_ai_indices": [
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "ai_findings_total": 13
+    }
+  ]
+}

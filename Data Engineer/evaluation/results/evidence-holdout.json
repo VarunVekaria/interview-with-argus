@@ -1,0 +1,15 @@
+{
+  "per_finding_summary": {
+    "findings_total": 14,
+    "findings_with_no_evidence": 0,
+    "findings_fully_verified": 14,
+    "quotes_total": 28,
+    "quotes_verified": 28,
+    "quotes_verified_rate": 1.0,
+    "quotes_verified_by_chunk": 5,
+    "quotes_verified_by_document_fallback_only": 23,
+    "quotes_outside_shown_context": 0,
+    "quotes_document_missing": 0
+  },
+  "total_cost_usd": 0.06123
+}

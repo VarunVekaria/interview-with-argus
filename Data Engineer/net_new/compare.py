@@ -19,7 +19,7 @@ def main():
     try:
         dataset = Dataset(args.dataset)
         cases = load_references(args.references, dataset)
-        metadata = json.loads((args.run / "run.json").read_text())
+        metadata = json.loads((args.run / "run.json").read_text(encoding="utf-8"))
         if metadata["dataset_fingerprint"] != dataset.fingerprint:
             raise ValueError("Run corpus fingerprint mismatch")
         aligned = align_cases(cases, load_records(args.run))

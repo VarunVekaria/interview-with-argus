@@ -1,0 +1,27 @@
+{
+  "filings_total": 9,
+  "filings_completed": 9,
+  "alerts": [
+    {
+      "check": "truncation",
+      "severity": "warning",
+      "filing_id": "0001193125-24-202457",
+      "message": "only 6.3% of current document included (15/239 chunks) -- below floor 20% (worst baseline case was 6.3%)"
+    }
+  ],
+  "alerts_by_severity": {
+    "error": 0,
+    "warning": 1
+  },
+  "prior_evidence_empty": {
+    "findings_total": 62,
+    "findings_with_no_prior_evidence": 21,
+    "rate": 0.3387096774193548
+  },
+  "invisible": [
+    "Factual correctness of any specific claim -- these checks never compare against a reference or ground truth, only against the run's own output shape and the real source documents (for quote grounding).",
+    "Whether a 'new'/'changed'/'repeated'/'uncertain' label is the CORRECT one for a given finding -- classification correctness needs the reference's acceptable_classifications, so it is graded, never monitored.",
+    "Whether a finding captures the prior-period COMPARISON, as opposed to just restating the current fact -- the recall_strict vs recall_lenient gap this whole investigation is about requires a reference and a judge; it is structurally invisible to a label-free monitor.",
+    "Whether an unmatched 'extra' finding is a genuinely good one -- evidence validity confirms the quote is real, not that the finding itself is worthwhile."
+  ]
+}

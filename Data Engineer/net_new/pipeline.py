@@ -63,7 +63,7 @@ def config(provider: str, model: str | None = None) -> dict:
     # Hash actual implementation as well as human-readable versions.
     code_hash = digest(
         {
-            p.name: p.read_text()
+            p.name: p.read_text(encoding="utf-8")
             for p in sorted(Path(__file__).parent.glob("*.py"))
             if p.name != "cli.py"
         }
@@ -230,7 +230,7 @@ def run_replay(
     if provider == "cache":
         if cache is None:
             raise ValueError("Cache mode requires --cache; no automatic live fallback")
-        cached_meta = json.loads((cache / "run.json").read_text())
+        cached_meta = json.loads((cache / "run.json").read_text(encoding="utf-8"))
         settings = cached_meta["config"]
         if model is not None and model != settings["model"]:
             raise ValueError("Requested model differs from the cached run")
@@ -259,10 +259,10 @@ def run_replay(
         "expected_filing_ids": [f.filing_id for f in filings],
         "status": "running",
     }
-    (output / "run.json").write_text(json.dumps(metadata, indent=2))
+    (output / "run.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     errors = 0
     try:
-        with (output / "records.jsonl").open("w") as stream:
+        with (output / "records.jsonl").open("w", encoding="utf-8") as stream:
             cached_records = {}
             if cache:
                 cached_records = {r["filing_id"]: r for r in load_records(cache)}
@@ -326,9 +326,13 @@ def run_replay(
         raise
     finally:
         metadata["finished_at"] = datetime.now(UTC).isoformat()
-        (output / "run.json").write_text(json.dumps(metadata, indent=2))
+        (output / "run.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     return metadata
 
 
 def load_records(run: Path) -> list[dict]:
-    return [json.loads(line) for line in (run / "records.jsonl").read_text().splitlines() if line]
+    return [
+        json.loads(line)
+        for line in (run / "records.jsonl").read_text(encoding="utf-8").splitlines()
+        if line
+    ]

@@ -1,0 +1,51 @@
+AMD 0000002488-24-000109: {"findings_total": 6, "findings_with_no_evidence": 0, "findings_fully_verified": 6, "quotes_total": 9, "quotes_verified": 9, "quotes_verified_rate": 1.0, "quotes_verified_by_chunk": 0, "quotes_verified_by_document_fallback_only": 9, "quotes_outside_shown_context": 0, "quotes_document_missing": 0}
+AMD 0000002488-24-000115: {"findings_total": 4, "findings_with_no_evidence": 0, "findings_fully_verified": 2, "quotes_total": 7, "quotes_verified": 5, "quotes_verified_rate": 0.7142857142857143, "quotes_verified_by_chunk": 5, "quotes_verified_by_document_fallback_only": 0, "quotes_outside_shown_context": 0, "quotes_document_missing": 0}
+    NOT-OK finding[1] role=current doc=AMD:0000002488-24-000115:exh99_1pengretirementpress.htm chunk_checked=True chunk_match=False doc_match=False in_shown=True
+      quote='Senior Vice President of the Artificial Intelligence Group (AIG) Vamsi Boppana will expand his current responsibilities to include the AMD Instinct\nde'
+    NOT-OK finding[3] role=current doc=AMD:0000002488-24-000115:amd-20240720.htm chunk_checked=True chunk_match=False doc_match=False in_shown=True
+      quote='The Company is currently preparing a retirement transition agreement to ensure a smooth transition and in recognition of Mr. Peng\ndef s service to the'
+CRWD 0001104659-24-081571: {"findings_total": 3, "findings_with_no_evidence": 0, "findings_fully_verified": 2, "quotes_total": 4, "quotes_verified": 3, "quotes_verified_rate": 0.75, "quotes_verified_by_chunk": 3, "quotes_verified_by_document_fallback_only": 0, "quotes_outside_shown_context": 0, "quotes_document_missing": 0}
+    NOT-OK finding[0] role=current doc=CRWD:0001104659-24-081571:tm2419936d1_8k.htm chunk_checked=True chunk_match=False doc_match=False in_shown=True
+      quote='On July 19, 2024, CrowdStrike Holdings, Inc. released a sensor configuration update for our Falcon sensor software that resulted in outages for a numb'
+AMD 0000002488-24-000121: {"findings_total": 13, "findings_with_no_evidence": 0, "findings_fully_verified": 12, "quotes_total": 26, "quotes_verified": 24, "quotes_verified_rate": 0.9230769230769231, "quotes_verified_by_chunk": 21, "quotes_verified_by_document_fallback_only": 3, "quotes_outside_shown_context": 0, "quotes_document_missing": 0}
+    NOT-OK finding[2] role=current doc=AMD:0000002488-24-000121:amdq224earningsslides.htm chunk_checked=True chunk_match=False doc_match=False in_shown=True
+      quote="Q3\\'24 Revenue ~$6.7 Billion, +/- $300 Million Gross Margin ~53.5% Operating Expenses ~$1.9 Billion Effective Tax Rate ~13% of pre-tax income Diluted "
+    NOT-OK finding[2] role=prior doc=AMD:0000002488-24-000054:amdq124earningsslides.htm chunk_checked=True chunk_match=False doc_match=False in_shown=True
+      quote="Q2\\'24 Revenue ~$5.7 Billion, +/- $300 Million Gross Margin ~53% Operating Expenses ~$1.8 Billion Effective Tax Rate ~13% of pre-tax income Diluted Sh"
+AMD 0001193125-24-202457: {"findings_total": 8, "findings_with_no_evidence": 0, "findings_fully_verified": 8, "quotes_total": 15, "quotes_verified": 15, "quotes_verified_rate": 1.0, "quotes_verified_by_chunk": 15, "quotes_verified_by_document_fallback_only": 0, "quotes_outside_shown_context": 0, "quotes_document_missing": 0}
+CRWD 0001535527-24-000017: {"findings_total": 10, "findings_with_no_evidence": 0, "findings_fully_verified": 6, "quotes_total": 18, "quotes_verified": 13, "quotes_verified_rate": 0.7222222222222222, "quotes_verified_by_chunk": 0, "quotes_verified_by_document_fallback_only": 13, "quotes_outside_shown_context": 0, "quotes_document_missing": 0}
+    NOT-OK finding[0] role=current doc=CRWD:0001535527-24-000017:crwd-20240828xex991.htm chunk_checked=False chunk_match=False doc_match=False in_shown=True
+      quote='Revenue: Total revenue was $963.9 million, a 32% increase, compared to $731.6 million in the second quarter of fiscal 2024. Subscription revenue was $'
+    NOT-OK finding[1] role=current doc=CRWD:0001535527-24-000017:crwd-20240828xex991.htm chunk_checked=False chunk_match=False doc_match=False in_shown=True
+      quote='$260.8 million, compared to $180.0 million in the second quarter of fiscal 2024. Non-GAAP net income attributable to CrowdStrike per share, diluted, w'
+    NOT-OK finding[2] role=current doc=CRWD:0001535527-24-000017:crwd-20240828xex991.htm chunk_checked=False chunk_match=False doc_match=False in_shown=True
+      quote='Total Channel File 291 Incident related costs $ 5,132 $ \ndef\n\ndef $ 5,132 $ \ndef'
+    NOT-OK finding[2] role=prior doc=CRWD:0001104659-24-081571:tm2419936d1_8k.htm chunk_checked=False chunk_match=False doc_match=False in_shown=True
+      quote='On July 19, 2024, CrowdStrike Holdings, Inc. released a sensor configuration update for our Falcon sensor software that resulted in outages for a numb'
+    NOT-OK finding[5] role=current doc=CRWD:0001535527-24-000017:crwd-20240828xex991.htm chunk_checked=False chunk_match=False doc_match=False in_shown=True
+      quote="CrowdStrike's module adoption rates were 65%, 45% and 29% for five or more, six or more and seven or more modules, respectively, as of July 31, 2024."
+AMD 0000002488-24-000161: {"findings_total": 13, "findings_with_no_evidence": 0, "findings_fully_verified": 12, "quotes_total": 33, "quotes_verified": 31, "quotes_verified_rate": 0.9393939393939394, "quotes_verified_by_chunk": 29, "quotes_verified_by_document_fallback_only": 2, "quotes_outside_shown_context": 0, "quotes_document_missing": 0}
+    NOT-OK finding[4] role=current doc=AMD:0000002488-24-000161:amdq324earningsslides.htm chunk_checked=True chunk_match=False doc_match=False in_shown=True
+      quote="Q4\\'24 Revenue ~$7.5 Billion, +/- $300 Million Gross Margin ~54.0% Operating Expenses ~$2.05 Billion Interest Expense/Other Income (Expense), net ~$17"
+    NOT-OK finding[4] role=prior doc=AMD:0000002488-24-000121:amdq224earningsslides.htm chunk_checked=True chunk_match=False doc_match=False in_shown=True
+      quote="Q3\\'24 Revenue ~$6.7 Billion, +/- $300 Million Gross Margin ~53.5% Operating Expenses ~$1.9 Billion Effective Tax Rate ~13% of pre-tax income Diluted "
+AMD 0000002488-24-000172: {"findings_total": 4, "findings_with_no_evidence": 0, "findings_fully_verified": 3, "quotes_total": 6, "quotes_verified": 5, "quotes_verified_rate": 0.8333333333333334, "quotes_verified_by_chunk": 0, "quotes_verified_by_document_fallback_only": 5, "quotes_outside_shown_context": 0, "quotes_document_missing": 0}
+    NOT-OK finding[3] role=current doc=AMD:0000002488-24-000172:exh-10_1xofferletterphilip.htm chunk_checked=False chunk_match=False doc_match=False in_shown=True
+      quote='A PRSU grant valued at 375,000 USD (the "Target Value") in performance-based RSUs (the "2024 PRSUs") with a payout that will range from 0% to 250% of '
+CRWD 0001535527-24-000024: {"findings_total": 13, "findings_with_no_evidence": 0, "findings_fully_verified": 12, "quotes_total": 22, "quotes_verified": 21, "quotes_verified_rate": 0.9545454545454546, "quotes_verified_by_chunk": 0, "quotes_verified_by_document_fallback_only": 21, "quotes_outside_shown_context": 0, "quotes_document_missing": 0}
+    NOT-OK finding[6] role=current doc=CRWD:0001535527-24-000024:crwd-20241126xex991.htm chunk_checked=False chunk_match=False doc_match=False in_shown=True
+      quote="CrowdStrike\\'s module adoption rates grew to 66%, 47%, 31%, and 20% for five or more, six or more, seven or more, and eight or more modules, respectiv"
+
+=== OVERALL across all 9 baseline filings ===
+{
+  "findings_total": 74,
+  "findings_with_no_evidence": 0,
+  "findings_fully_verified": 63,
+  "quotes_total": 140,
+  "quotes_verified": 126,
+  "quotes_verified_rate": 0.9,
+  "quotes_verified_by_chunk": 73,
+  "quotes_verified_by_document_fallback_only": 53,
+  "quotes_outside_shown_context": 0,
+  "quotes_document_missing": 0
+}

@@ -102,7 +102,9 @@ class Manifest(BaseModel):
 class Dataset:
     def __init__(self, root: str | Path):
         self.root = Path(root).resolve()
-        self.manifest = Manifest.model_validate_json((self.root / "manifest.json").read_text())
+        self.manifest = Manifest.model_validate_json(
+            (self.root / "manifest.json").read_text(encoding="utf-8")
+        )
         self.documents = sorted(self.manifest.documents, key=lambda d: (d.available_at, d.id))
         for doc in self.documents:
             actual = hashlib.sha256(local_file(self.root, doc.path).read_bytes()).hexdigest()
@@ -110,7 +112,9 @@ class Dataset:
                 raise ValueError(f"Document checksum mismatch: {doc.id}")
         self.prices: list[Price] = []
         if self.manifest.prices:
-            with local_file(self.root, self.manifest.prices.path).open(newline="") as f:
+            with local_file(self.root, self.manifest.prices.path).open(
+                newline="", encoding="utf-8"
+            ) as f:
                 self.prices = [Price.model_validate(row) for row in csv.DictReader(f)]
             if len({(p.ticker, p.date) for p in self.prices}) != len(self.prices):
                 raise ValueError("Duplicate ticker/session in prices")
